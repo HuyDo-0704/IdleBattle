@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83b7566d5335bc3469975bfbd1dc331a, type: 3}
   m_Name: Stage1-1
   m_EditorClassIdentifier: 
+  stageName: Stage 1-1
   enemies:
   - currentStats:
       baseStats: {fileID: 11400000, guid: 2870f6b056d523d48b2c5cc154200bdb, type: 2}
@@ -20,7 +21,6 @@ MonoBehaviour:
       CDef: 0
       MHealth: 0
       MMana: 0
-      ManaBonus: 0
       CCriticalRate: 0
       CCriticalDamage: 0
       PowerStats: 0
@@ -34,7 +34,6 @@ MonoBehaviour:
       CDef: 0
       MHealth: 0
       MMana: 0
-      ManaBonus: 0
       CCriticalRate: 0
       CCriticalDamage: 0
       PowerStats: 0
@@ -48,7 +47,6 @@ MonoBehaviour:
       CDef: 0
       MHealth: 0
       MMana: 0
-      ManaBonus: 0
       CCriticalRate: 0
       CCriticalDamage: 0
       PowerStats: 0
@@ -62,7 +60,6 @@ MonoBehaviour:
       CDef: 0
       MHealth: 0
       MMana: 0
-      ManaBonus: 0
       CCriticalRate: 0
       CCriticalDamage: 0
       PowerStats: 0
@@ -76,7 +73,6 @@ MonoBehaviour:
       CDef: 0
       MHealth: 0
       MMana: 0
-      ManaBonus: 0
       CCriticalRate: 0
       CCriticalDamage: 0
       PowerStats: 0
@@ -90,7 +86,6 @@ MonoBehaviour:
       CDef: 0
       MHealth: 0
       MMana: 0
-      ManaBonus: 0
       CCriticalRate: 0
       CCriticalDamage: 0
       PowerStats: 0
