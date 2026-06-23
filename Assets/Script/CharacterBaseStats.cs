@@ -16,18 +16,17 @@ public class CharacterBaseStats : ScriptableObject
     public Rare rare;
 
     [Header("Base Stats")]
-    public float maxHealth = 100f;
+    public float DeHealth = 100f;
     public float maxMana = 100f;
     public float ManaBonus = 0;
-    public float attack = 10f;
-    public float defense = 5f;
+    public float DeAttack = 10f;
+    public float DeDefense = 5f;
     public float Speed = 3.5f;
     public float CriticalRate = 0f; 
     public float CriticalDamage = 0f;
 
     [Header("Attack Settings")]
     public AttackType attackType = AttackType.Melee;
-    public float attackRange = 1.2f;
     public float attackSpeed = 1f; // attacks per second
 
     [Header("Level Scaling")]
@@ -40,7 +39,7 @@ public class CharacterBaseStats : ScriptableObject
     // --------- Optional: Function to get stats by level ----------
     public float GetHealthByLevel(float level)
     {
-        return maxHealth + (level - baseLevel) * healthPerLevel;
+        return DeHealth + (level - baseLevel) * healthPerLevel;
     }
 
     public float GetManaByLevel(float level)
@@ -50,12 +49,12 @@ public class CharacterBaseStats : ScriptableObject
 
     public float GetAttackByLevel(float level)
     {
-        return attack + (level - baseLevel) * attackPerLevel;
+        return DeAttack + (level - baseLevel) * attackPerLevel;
     }
 
     public float GetDefenseByLevel(float level)
     {
-        return defense + (level - baseLevel) * defensePerLevel;
+        return DeDefense + (level - baseLevel) * defensePerLevel;
     }
     
 }

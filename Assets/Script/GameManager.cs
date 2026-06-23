@@ -6,7 +6,6 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     public List<Character> playersTeam = new List<Character>();
-    public List<Character> enemiesTeam = new List<Character>();
 
     public float CurrentPowerTeam;
     public float LevelPlayer;
@@ -55,28 +54,6 @@ public class GameManager : MonoBehaviour
         RefreshLineup();
     }
     // setup enemie stage 
-    public void SetEnemyFromStage(StageData stage)
-    {
-        enemiesTeam.Clear();
-
-        foreach (var enemy in stage.enemies)
-        {
-            if (enemy == null) continue;
-
-            // clone để tránh reference chung
-            Character newEnemy = new Character();
-            newEnemy.star = enemy.star;
-            newEnemy.isLineup = false;
-
-            newEnemy.currentStats = new CurrentStats();
-            newEnemy.currentStats.baseStats = enemy.currentStats.baseStats;
-            newEnemy.currentStats.CurrentLevel = enemy.currentStats.CurrentLevel;
-
-            newEnemy.currentStats.InitializeStats();
-
-            enemiesTeam.Add(newEnemy);
-        }
-    }
 }
 
 [System.Serializable]

@@ -87,8 +87,6 @@ public class NetworkFusion : MonoBehaviour, INetworkRunnerCallbacks
     void SendLineup()
     {
         var lineup = Lineup.Instance.GetNetworkLineup();
-
-        BattleManager.Instance.RPC_SendLineup(lineup);
     }
     public void OnPlayerJoined(NetworkRunner runner, PlayerRef player)
     {

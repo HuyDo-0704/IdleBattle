@@ -1,207 +1,152 @@
 using UnityEngine;
 using UnityEngine.UI;
-using Fusion;
+
 public enum TypeTeam
 {
-    none,
+    None,
     Player,
     Enemy
 }
-public class HudSystem : NetworkBehaviour
+
+public class HudSystem : MonoBehaviour
 {
     [Header("UI")]
-    public Image healthFill;
-    public Image manaFill;
-    public GameObject HUDBar; // chứa health + mana bar
+    [SerializeField] private Image healthFill;
+    [SerializeField] private Image manaFill;
+    [SerializeField] private GameObject HUDBar;
+
     [Header("Color")]
-    public Color friendlyColor = Color.green;
-    public Color enemyColor = Color.red;
+    [SerializeField] private Color friendlyColor = Color.green;
+    [SerializeField] private Color enemyColor = Color.red;
 
-    [HideInInspector] public CharacterManager owner;
+    [HideInInspector]
+    public CharacterManager owner;
 
-    [Networked] public TypeTeam typeTeam {get; set;}
-    private TypeTeam lastTeam = TypeTeam.none;
-    [Networked] public NetworkBool isDead { get; set; }
+    public TypeTeam typeTeam = TypeTeam.None;
 
-    // NETWORKED DATA
-    [Networked] public float maxHealth { get; set; }
-    [Networked] public float maxMana { get; set; }
-    [Networked] public float currentHealth { get; set; }
-    [Networked] public float currentMana { get; set; }
-    [Networked] private NetworkBool damagedFlag { get; set; }
-    [Networked] private NetworkBool deathFlag { get; set; }
+    public float maxHealth;
+    public float maxMana;
+
+    public float currentHealth;
+    public float currentMana;
+
+    public bool IsDead { get; private set; }
+
     private Animator anim;
+    private TypeTeam lastTeam;
 
-
-    public override void Spawned()
+    private void Start()
     {
-        UpdateUI();
         if (owner == null)
             owner = GetComponentInParent<CharacterManager>();
 
-        // THÊM DÒNG NÀY
-        if (owner.Stats.MHealth <= 0)
-            owner.Stats.InitializeStats();
-
-        if (Object.HasStateAuthority)
+        if (owner != null)
         {
+            if (owner.Stats.MHealth <= 0)
+                owner.Stats.InitializeStats();
+
             maxHealth = owner.Stats.MHealth;
             maxMana = owner.Stats.MMana;
+
             currentHealth = maxHealth;
             currentMana = maxMana;
         }
-        UpdateDirection();
+
         anim = GetComponent<Animator>();
+
+        UpdateDirection();
+        UpdateUI();
     }
-    public override void Render()
+
+    private void Update()
     {
-        if (anim == null) return;
-
-        if (damagedFlag)
-        {
-            anim.SetTrigger("Damaged");
-
-            if (Object.HasStateAuthority)
-                damagedFlag = false;
-        }
-
-        if (deathFlag)
-        {
-            anim.SetTrigger("Death");
-            HUDBar.SetActive(false);
-            if (Object.HasStateAuthority)
-                deathFlag = false; 
-        }
-    }
-    public void Update()
-    {
-        if (Object.HasStateAuthority)
-        {
-            if (Input.GetKeyDown(KeyCode.H))
-            {
-                TakeDamage(10f);
-            }
-
-            if (Input.GetKeyDown(KeyCode.G))
-            {
-                restoreMana(10);
-            }  
-        }
-
-        // detect change
         if (lastTeam != typeTeam)
         {
             lastTeam = typeTeam;
             UpdateDirection();
         }
-
-        UpdateUI();
     }
 
-    // =========================
-    // UPDATE UI
-    // =========================
-    void UpdateUI()
+    private void UpdateUI()
     {
         if (healthFill != null && maxHealth > 0)
             healthFill.fillAmount = currentHealth / maxHealth;
 
         if (manaFill != null && maxMana > 0)
             manaFill.fillAmount = currentMana / maxMana;
+
         UpdateColor();
     }
-    void UpdateColor()
+
+    private void UpdateColor()
     {
         if (healthFill == null) return;
 
-        int localId = Runner.LocalPlayer.PlayerId;
-
-        bool isFriendly;
-
-        if (localId == 1)
-        {
-            // Player 1 (host)
-            isFriendly = (typeTeam == TypeTeam.Player);
-        }
-        else
-        {
-            // Player 2 (client)
-            isFriendly = (typeTeam == TypeTeam.Enemy);
-        }
-
-        healthFill.color = isFriendly ? friendlyColor : enemyColor;
+        healthFill.color =
+            typeTeam == TypeTeam.Player
+            ? friendlyColor
+            : enemyColor;
     }
-    void UpdateDirection()
+
+    private void UpdateDirection()
     {
+        Vector3 scale = transform.localScale;
 
-        var rect = GetComponent<Transform>();
-        if (rect == null) return;
+        scale.x = typeTeam == TypeTeam.Player
+            ? -Mathf.Abs(scale.x)
+            : Mathf.Abs(scale.x);
 
-        Vector3 scale = rect.localScale;
-
-        if (typeTeam == TypeTeam.Player)
-            scale.x = -Mathf.Abs(scale.x); // quay trái
-        else
-            scale.x = Mathf.Abs(scale.x);  // quay phải
-
-        rect.localScale = scale;
+        transform.localScale = scale;
     }
-    // =========================
-    // DAMAGE
-    // =========================
-    public void TakeDamage(float dmg)
-    {
-        if (!Object.HasStateAuthority) return;
 
-        currentHealth -= dmg;
+    public void TakeDamage(float damage)
+    {
+        if (IsDead) return;
+
+        currentHealth -= damage;
         currentHealth = Mathf.Max(currentHealth, 0);
 
-        damagedFlag = true; // sync cho client
+        if (anim != null)
+            anim.SetTrigger("Damaged");
 
         if (currentHealth <= 0)
-        {
             Die();
-        }
+        UpdateUI();
     }
 
-    // =========================
-    // USE MANA
-    // =========================
-    public void UseMana(float amount)
-    {
-        if (!Object.HasStateAuthority) return;
-
-        currentMana -= amount;
-        currentMana = Mathf.Min(currentMana, maxMana);
-    }
-
-    public void restoreMana(float amount)
-    {
-        if (!Object.HasStateAuthority) return;
-        currentMana += amount;
-        currentMana = Mathf.Max(currentMana, 0);
-    }
-    // =========================
-    // HEAL
-    // =========================
     public void Heal(float amount)
     {
-        if (!Object.HasStateAuthority) return;
+        if (IsDead) return;
 
         currentHealth += amount;
         currentHealth = Mathf.Min(currentHealth, maxHealth);
+        UpdateUI();
     }
 
-    // =========================
-    // DEATH
-    // =========================
-    public void Die()
+    public void UseMana(float amount)
     {
-        if (isDead) return;
+        currentMana -= amount;
+        currentMana = Mathf.Max(currentMana, 0);
+        UpdateUI();
+    }
 
-        isDead = true;
+    public void RestoreMana(float amount)
+    {
+        currentMana += amount;
+        currentMana = Mathf.Min(currentMana, maxMana);
+        UpdateUI();
+    }
 
-        deathFlag = true; // sync animation
+    private void Die()
+    {
+        if (IsDead) return;
 
+        IsDead = true;
+
+        if (anim != null)
+            anim.SetTrigger("Death");
+
+        if (HUDBar != null)
+            HUDBar.SetActive(false);
     }
 }
