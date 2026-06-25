@@ -10,7 +10,7 @@ public class CurrentStats
     public float CAttack;
     public float CDef;
     public float MHealth;
-    public float MMana;
+    public float ManaBonus;
 
     public float CCriticalRate;
     public float CCriticalDamage;
@@ -22,10 +22,9 @@ public class CurrentStats
     public void InitializeStats()
     {
         MHealth = baseStats.GetHealthByLevel(CurrentLevel);
-        MMana = baseStats.maxMana;
         CAttack = baseStats.GetAttackByLevel(CurrentLevel);
         CDef = baseStats.GetDefenseByLevel(CurrentLevel);
-
+        ManaBonus = baseStats.GetManaBonusByLevel(CurrentLevel);
         CSpeed = baseStats.Speed;
         CCriticalRate = baseStats.CriticalRate;
         CCriticalDamage = baseStats.CriticalDamage;

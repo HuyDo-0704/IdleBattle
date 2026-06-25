@@ -22,12 +22,14 @@ public class Lineup : MonoBehaviour
         { 
             myLineup.Add(new PositionInLineup { position = position, CharIndex = character }); 
         } 
+        GameManager.Instance.UpdateTeamPower();
     } 
     // ================= REMOVE ================= 
     public void RemoveLineup(Position position) 
     { 
         // Tìm và xóa vị trí trong đội hình 
-        myLineup.RemoveAll(p => p.position == position); 
+        myLineup.RemoveAll(p => p.position == position);
+        GameManager.Instance.UpdateTeamPower();
     } 
     // ================= NETWORK ================= 
     public NetworkCharacterData[] GetNetworkLineup() 
@@ -35,12 +37,12 @@ public class Lineup : MonoBehaviour
         List<NetworkCharacterData> result = new List<NetworkCharacterData>(); 
         foreach (var c in myLineup) 
         { 
-            if (c.CharIndex < 0 || c.CharIndex >= CharacterInventory.Instance.ownedCharacters.Count) 
+            if (c.CharIndex < 0 || c.CharIndex >= CharacterInventoryManager.Instance.ownedCharacters.Count) 
             { 
                 Debug.LogWarning("CharIndex out of range"); 
                 continue; 
             } 
-            Character character = CharacterInventory.Instance.ownedCharacters[c.CharIndex]; 
+            Character character = CharacterInventoryManager.Instance.ownedCharacters[c.CharIndex]; 
             if (character == null || character.currentStats == null || character.currentStats.baseStats == null) 
             { 
                 Debug.LogError("Character data NULL"); 

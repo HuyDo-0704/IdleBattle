@@ -25,7 +25,7 @@ public class CardButton : MonoBehaviour
     }
     public void OnCardButtonClicked()
     {
-        if (CharacterInventory.Instance == null)
+        if (CharacterInventoryManager.Instance == null)
         {
             Debug.LogWarning("CharacterInventory Instance is null.");
             return;
@@ -33,13 +33,13 @@ public class CardButton : MonoBehaviour
 
         int index = infoButton.characterID;
 
-        if (index < 0 || index >= CharacterInventory.Instance.ownedCharacters.Count)
+        if (index < 0 || index >= CharacterInventoryManager.Instance.ownedCharacters.Count)
         {
             Debug.LogWarning($"CharacterID {infoButton.characterID} is out of range.");
             return;
         }
 
-        Character character = CharacterInventory.Instance.ownedCharacters[index];
+        Character character = CharacterInventoryManager.Instance.ownedCharacters[index];
         CharDetail.Instance.UpdateInfo(character.currentStats, infoButton.characterID);
         CharDetail.Instance.OpenPanel();
     }

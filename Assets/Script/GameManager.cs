@@ -1,14 +1,11 @@
 using UnityEngine;
-using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
-    public List<Character> playersTeam = new List<Character>();
-
     public float CurrentPowerTeam;
-    public float LevelPlayer;
+    public int LevelPlayer;
 
     private void Awake()
     {
@@ -23,37 +20,33 @@ public class GameManager : MonoBehaviour
     }
 
     private void Start()
-    {
-        RefreshLineup();
-    }
-
-    // ⬇ Lấy team từ Inventory và khởi tạo
-    public void RefreshLineup()
-    {
-        playersTeam = CharacterInventory.Instance.GetLineupCharacters();
-
-        foreach (var c in playersTeam)
-            c.currentStats.InitializeStats();
-
+    {   
+        // Khởi tạo chỉ số của tất cả nhân vật trong túi đồ
+        CharacterInventoryManager.Instance.InitializeAllCharacters(); 
+        // Cập nhật sức mạnh đội hình
         UpdateTeamPower();
     }
 
-    // ⬇ Tính tổng Power
     public void UpdateTeamPower()
     {
         CurrentPowerTeam = 0;
 
-        foreach (var c in playersTeam)
-            CurrentPowerTeam += c.currentStats.PowerStats;
-    }
+        foreach (var lineupPos in Lineup.Instance.myLineup)
+        {
+            if (lineupPos.CharIndex < 0 ||
+                lineupPos.CharIndex >= CharacterInventoryManager.Instance.ownedCharacters.Count)
+                continue;
 
-    // ⬇ Thêm tướng vào đội hình
-    public void SetLineup(Character character, bool value)
-    {
-        character.isLineup = value;
-        RefreshLineup();
+            Character character =
+                CharacterInventoryManager.Instance.ownedCharacters[lineupPos.CharIndex];
+
+            if (character == null)
+                continue;
+
+            CurrentPowerTeam +=
+                character.currentStats.PowerStats;
+        }
     }
-    // setup enemie stage 
 }
 
 [System.Serializable]

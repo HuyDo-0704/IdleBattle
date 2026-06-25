@@ -14,8 +14,16 @@ public class CharacterManager : MonoBehaviour
     {
         if (currentState == State.Idle)
         {
-            Hud.gameObject.SetActive(false);
+            Hud.HUDBar.gameObject.SetActive(false);
         }
+    }
+    public void SetupCharacter(Character character)
+    {
+        Stats = character.currentStats;
+        
+        Hud.maxHealth = Stats.MHealth;
+        Hud.currentHealth = Stats.MHealth;
+        currentState = State.Combat;
     }
     public IEnumerator Acting()
     {
@@ -57,12 +65,13 @@ public class CharacterManager : MonoBehaviour
 
                 break;
         }
+        Hud.RestoreMana(25f);
     }
 
     public void ReceiveDamage(int damage)
     {
         Hud.TakeDamage(damage);
-         DamagePopupManager.Instance.ShowDamage(transform, damage);
+         DamagePopupManager.Instance.ShowDamage(Hud.transform, damage);
         Debug.Log(
             $"{name} HP = {Hud.currentHealth}/{Hud.maxHealth}");
     }

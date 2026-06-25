@@ -16,12 +16,12 @@ public class LineupPanel : MonoBehaviour
         {
             Position pos = slot.position;
             PositionInLineup lineupPos = Lineup.Instance.myLineup.Find(p => p.position == pos);
-            if (lineupPos == null || lineupPos.CharIndex < 0 || lineupPos.CharIndex >= CharacterInventory.Instance.ownedCharacters.Count)
+            if (lineupPos == null || lineupPos.CharIndex < 0 || lineupPos.CharIndex >= CharacterInventoryManager.Instance.ownedCharacters.Count)
             {
                 slot.ClearSlot();
                 continue;
             }
-            Character character = CharacterInventory.Instance.ownedCharacters[lineupPos.CharIndex];
+            Character character = CharacterInventoryManager.Instance.ownedCharacters[lineupPos.CharIndex];
             slot.UpdateCard(character);
         }
     }

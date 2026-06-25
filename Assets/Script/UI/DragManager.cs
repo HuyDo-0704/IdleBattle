@@ -57,13 +57,13 @@ public class DragManager : MonoBehaviour
 
         IDItem = card.infoButton.characterID;
 
-        if (IDItem < 0 || IDItem >= CharacterInventory.Instance.ownedCharacters.Count)
+        if (IDItem < 0 || IDItem >= CharacterInventoryManager.Instance.ownedCharacters.Count)
         {
             Debug.LogError("CharacterID không hợp lệ!");
             return;
         }
 
-        Character character = CharacterInventory.Instance.ownedCharacters[IDItem];
+        Character character = CharacterInventoryManager.Instance.ownedCharacters[IDItem];
 
         if (character.isLineup)
         {
@@ -133,7 +133,7 @@ public class DragManager : MonoBehaviour
             {
                 Debug.Log("Dropped vào LineUpSlot");
 
-                if (IDItem < 0 || IDItem >= CharacterInventory.Instance.ownedCharacters.Count)
+                if (IDItem < 0 || IDItem >= CharacterInventoryManager.Instance.ownedCharacters.Count)
                 {
                     Debug.LogWarning("CharacterID out of range");
                     ReturnToOriginal();
@@ -141,7 +141,7 @@ public class DragManager : MonoBehaviour
                     return;
                 }
 
-                Character character = CharacterInventory.Instance.ownedCharacters[IDItem];
+                Character character = CharacterInventoryManager.Instance.ownedCharacters[IDItem];
 
                 // Update trạng thái
                 character.isLineup = true;

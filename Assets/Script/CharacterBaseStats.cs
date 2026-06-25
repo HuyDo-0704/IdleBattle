@@ -17,10 +17,9 @@ public class CharacterBaseStats : ScriptableObject
 
     [Header("Base Stats")]
     public float DeHealth = 100f;
-    public float maxMana = 100f;
-    public float ManaBonus = 0;
     public float DeAttack = 10f;
     public float DeDefense = 5f;
+    public float ManaBonus = 0f;
     public float Speed = 3.5f;
     public float CriticalRate = 0f; 
     public float CriticalDamage = 0f;
@@ -42,9 +41,9 @@ public class CharacterBaseStats : ScriptableObject
         return DeHealth + (level - baseLevel) * healthPerLevel;
     }
 
-    public float GetManaByLevel(float level)
+    public float GetManaBonusByLevel(float level)
     {
-        return maxMana + (level - baseLevel) * manaPerLevel;
+        return ManaBonus + (level - baseLevel) * manaPerLevel;
     }
 
     public float GetAttackByLevel(float level)

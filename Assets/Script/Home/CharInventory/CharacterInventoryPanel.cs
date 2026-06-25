@@ -25,7 +25,7 @@ public class CharacterInventoryPanel : MonoBehaviour
             Destroy(child.gameObject);
         }
 
-        var list = CharacterInventory.Instance.ownedCharacters;
+        var list = CharacterInventoryManager.Instance.ownedCharacters;
 
         for (int i = 0; i < list.Count; i++)
         {

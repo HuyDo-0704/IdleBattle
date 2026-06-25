@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
-
+using System.Collections;
 public enum TypeTeam
 {
     None,
@@ -13,7 +13,7 @@ public class HudSystem : MonoBehaviour
     [Header("UI")]
     [SerializeField] private Image healthFill;
     [SerializeField] private Image manaFill;
-    [SerializeField] private GameObject HUDBar;
+    public GameObject HUDBar;
 
     [Header("Color")]
     [SerializeField] private Color friendlyColor = Color.green;
@@ -23,17 +23,22 @@ public class HudSystem : MonoBehaviour
     public CharacterManager owner;
 
     public TypeTeam typeTeam = TypeTeam.None;
-
+    // health
     public float maxHealth;
-    public float maxMana;
-
     public float currentHealth;
+    // mana
     public float currentMana;
-
+    private float maxMana = 100f;
     public bool IsDead { get; private set; }
 
     private Animator anim;
     private TypeTeam lastTeam;
+    [Header("Damage Feedback")]
+    [SerializeField] private float shakeDuration = 0.15f;
+    [SerializeField] private float shakeAmount = 0.05f;
+
+    private Vector3 hudBarOriginalPos;
+    private Coroutine shakeCoroutine;
 
     private void Start()
     {
@@ -46,14 +51,15 @@ public class HudSystem : MonoBehaviour
                 owner.Stats.InitializeStats();
 
             maxHealth = owner.Stats.MHealth;
-            maxMana = owner.Stats.MMana;
 
             currentHealth = maxHealth;
-            currentMana = maxMana;
+            currentMana = 0 + owner.Stats.ManaBonus;
         }
 
         anim = GetComponent<Animator>();
 
+        if (HUDBar != null)
+        hudBarOriginalPos = HUDBar.transform.localPosition;
         UpdateDirection();
         UpdateUI();
     }
@@ -77,7 +83,14 @@ public class HudSystem : MonoBehaviour
 
         UpdateColor();
     }
+    public void SetTeam(TypeTeam team)
+    {
+        typeTeam = team;
+        lastTeam = team;
 
+        UpdateDirection();
+        UpdateColor();
+    }
     private void UpdateColor()
     {
         if (healthFill == null) return;
@@ -109,8 +122,17 @@ public class HudSystem : MonoBehaviour
         if (anim != null)
             anim.SetTrigger("Damaged");
 
+        if (HUDBar != null)
+        {
+            if (shakeCoroutine != null)
+                StopCoroutine(shakeCoroutine);
+
+            shakeCoroutine = StartCoroutine(ShakeHUDBar());
+        }
+
         if (currentHealth <= 0)
             Die();
+
         UpdateUI();
     }
 
@@ -148,5 +170,27 @@ public class HudSystem : MonoBehaviour
 
         if (HUDBar != null)
             HUDBar.SetActive(false);
+    }
+    // shake hudBar
+    private IEnumerator ShakeHUDBar()
+    {
+        float timer = 0f;
+
+        while (timer < shakeDuration)
+        {
+            timer += Time.deltaTime;
+
+            Vector3 offset = new Vector3(
+                Random.Range(-shakeAmount, shakeAmount),
+                Random.Range(-shakeAmount, shakeAmount),
+                0f);
+
+            HUDBar.transform.localPosition =
+                hudBarOriginalPos + offset;
+
+            yield return null;
+        }
+
+        HUDBar.transform.localPosition = hudBarOriginalPos;
     }
 }

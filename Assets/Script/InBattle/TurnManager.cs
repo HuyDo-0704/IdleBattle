@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class TurnManager : MonoBehaviour
 {
-    private Queue<CharacterManager> turnQueue =
+    [SerializeField] private Queue<CharacterManager> turnQueue =
         new Queue<CharacterManager>();
 
-    private IEnumerator Start()
+    public void SetUp()
     {
-        yield return new WaitForSeconds(1f);
-
-        Debug.Log("=== BATTLE START ===");
-
         List<CharacterManager> allCharacters =
             new List<CharacterManager>();
 

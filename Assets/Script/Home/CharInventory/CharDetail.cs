@@ -52,13 +52,13 @@ public class CharDetail : MonoBehaviour
         int nextCharID = currentCharID + 1;
         int index = nextCharID;
 
-        if (index < 0 || index >= CharacterInventory.Instance.ownedCharacters.Count)
+        if (index < 0 || index >= CharacterInventoryManager.Instance.ownedCharacters.Count)
         {
             Debug.Log("Reached last character.");
             return;
         }
 
-        Character nextChar = CharacterInventory.Instance.ownedCharacters[index];
+        Character nextChar = CharacterInventoryManager.Instance.ownedCharacters[index];
         UpdateInfo(nextChar.currentStats, nextCharID);
     }
     public void PreviousChar()
@@ -66,13 +66,13 @@ public class CharDetail : MonoBehaviour
         int prevCharID = currentCharID - 1;
         int index = prevCharID;
 
-        if (index < 0 || index >= CharacterInventory.Instance.ownedCharacters.Count)
+        if (index < 0 || index >= CharacterInventoryManager.Instance.ownedCharacters.Count)
         {
             Debug.Log("Reached first character.");
             return;
         }
 
-        Character prevChar = CharacterInventory.Instance.ownedCharacters[index];
+        Character prevChar = CharacterInventoryManager.Instance.ownedCharacters[index];
         UpdateInfo(prevChar.currentStats, prevCharID);
     }
 }

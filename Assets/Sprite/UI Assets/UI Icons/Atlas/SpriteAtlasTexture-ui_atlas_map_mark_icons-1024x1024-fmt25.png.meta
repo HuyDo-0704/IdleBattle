@@ -108,7 +108,7 @@ TextureImporter:
         width: 1024
         height: 855
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -121,11 +121,55 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-ui_atlas_map_mark_icons-1024x1024-fmt25_1
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 528
+        width: 52
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba734bffdad2f504e9048b718f18670a
+      internalID: 1331617228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-ui_atlas_map_mark_icons-1024x1024-fmt25_2
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 585
+        width: 45
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50a3d7d1b0cf6f34eab1104fc5c324f7
+      internalID: -537565536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 9fec74a350b37304a982fa6d09023d30
     internalID: 0
     vertices: []
     indices: 
@@ -136,6 +180,8 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       SpriteAtlasTexture-ui_atlas_map_mark_icons-1024x1024-fmt25_0: -8853664312436456398
+      SpriteAtlasTexture-ui_atlas_map_mark_icons-1024x1024-fmt25_1: 1331617228
+      SpriteAtlasTexture-ui_atlas_map_mark_icons-1024x1024-fmt25_2: -537565536
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

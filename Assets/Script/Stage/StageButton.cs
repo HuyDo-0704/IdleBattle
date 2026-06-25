@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 public class StageButton : MonoBehaviour
 {
     public StageData stageData;
-    public void showStageInfo()
+    public void ShowStageInfo()
     {
         StageInfo.Instance.UpdateInfoStage(stageData);
     }

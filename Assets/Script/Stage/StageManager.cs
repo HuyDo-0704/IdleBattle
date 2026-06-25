@@ -1,16 +1,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WorldMapManager : MonoBehaviour
+public class StageManager : MonoBehaviour
 {
-    // Start is called before the first execution of Update after the MonoBehaviour is created
-    public StageInfo stageInfo;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
 [System.Serializable]
 public class Region

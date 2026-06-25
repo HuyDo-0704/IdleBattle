@@ -6,30 +6,24 @@ public class DamagePopupManager : MonoBehaviour
 
     [SerializeField]
     private PopupDamageEffect popupPrefab;
-
-    [SerializeField]
-    private Canvas canvas;
-
+    [SerializeField] private float popupHeightOffset = 1.5f;
     private void Awake()
     {
         Instance = this;
     }
 
     public void ShowDamage(
-        Transform target,
-        int damage)
+    Transform target,
+    int damage)
     {
+        Vector3 spawnPos =
+            target.position + Vector3.up * popupHeightOffset;
+
         PopupDamageEffect popup =
             Instantiate(
                 popupPrefab,
-                canvas.transform);
-
-        Vector2 screenPos =
-            Camera.main.WorldToScreenPoint(
-                target.position);
-
-        popup.GetComponent<RectTransform>()
-            .position = screenPos;
+                spawnPos,
+                Quaternion.identity);
 
         popup.SetText(damage.ToString());
     }

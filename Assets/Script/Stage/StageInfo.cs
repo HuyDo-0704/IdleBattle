@@ -6,6 +6,7 @@ public class StageInfo : MonoBehaviour
     
     [SerializeField] private TMP_Text stageNameText;
     private Animator animator;
+    private StageData CurrentStage;
     public void Awake()
     {
         if (Instance != null && Instance != this)
@@ -18,7 +19,15 @@ public class StageInfo : MonoBehaviour
     }
     public void UpdateInfoStage(StageData data)
     {
+        CurrentStage = data;
         animator.SetTrigger("Show");
-        stageNameText.text = data.stageName;
+        stageNameText.text = CurrentStage.stageName;
+    }
+    public void StartStage()
+    {
+        if (CurrentStage != null)
+        {
+            BattleManager.Instance.StartBattle(CurrentStage);
+        }
     }
 }

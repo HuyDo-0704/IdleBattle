@@ -5,5 +5,11 @@ using System.Collections.Generic;
 public class StageData : ScriptableObject
 {
     public string stageName;
-    public List<Character> enemies;
+    public List<EnemyLineupData> enemies;
+}
+[System.Serializable]
+public class EnemyLineupData
+{
+    public Position position;
+    public Character character;
 }

@@ -14,81 +14,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stageName: Stage 1-1
   enemies:
-  - currentStats:
-      baseStats: {fileID: 11400000, guid: 2870f6b056d523d48b2c5cc154200bdb, type: 2}
-      CSpeed: 0
-      CAttack: 0
-      CDef: 0
-      MHealth: 0
-      MMana: 0
-      CCriticalRate: 0
-      CCriticalDamage: 0
-      PowerStats: 0
-      CurrentLevel: 10
-    star: 3
-    isLineup: 0
-  - currentStats:
-      baseStats: {fileID: 11400000, guid: 2870f6b056d523d48b2c5cc154200bdb, type: 2}
-      CSpeed: 0
-      CAttack: 0
-      CDef: 0
-      MHealth: 0
-      MMana: 0
-      CCriticalRate: 0
-      CCriticalDamage: 0
-      PowerStats: 0
-      CurrentLevel: 10
-    star: 3
-    isLineup: 0
-  - currentStats:
-      baseStats: {fileID: 11400000, guid: 2870f6b056d523d48b2c5cc154200bdb, type: 2}
-      CSpeed: 0
-      CAttack: 0
-      CDef: 0
-      MHealth: 0
-      MMana: 0
-      CCriticalRate: 0
-      CCriticalDamage: 0
-      PowerStats: 0
-      CurrentLevel: 10
-    star: 3
-    isLineup: 0
-  - currentStats:
-      baseStats: {fileID: 11400000, guid: 2870f6b056d523d48b2c5cc154200bdb, type: 2}
-      CSpeed: 0
-      CAttack: 0
-      CDef: 0
-      MHealth: 0
-      MMana: 0
-      CCriticalRate: 0
-      CCriticalDamage: 0
-      PowerStats: 0
-      CurrentLevel: 10
-    star: 3
-    isLineup: 0
-  - currentStats:
-      baseStats: {fileID: 11400000, guid: 2870f6b056d523d48b2c5cc154200bdb, type: 2}
-      CSpeed: 0
-      CAttack: 0
-      CDef: 0
-      MHealth: 0
-      MMana: 0
-      CCriticalRate: 0
-      CCriticalDamage: 0
-      PowerStats: 0
-      CurrentLevel: 10
-    star: 3
-    isLineup: 0
-  - currentStats:
-      baseStats: {fileID: 11400000, guid: 2870f6b056d523d48b2c5cc154200bdb, type: 2}
-      CSpeed: 0
-      CAttack: 0
-      CDef: 0
-      MHealth: 0
-      MMana: 0
-      CCriticalRate: 0
-      CCriticalDamage: 0
-      PowerStats: 0
-      CurrentLevel: 10
-    star: 3
-    isLineup: 0
+  - position: 0
+    character:
+      currentStats:
+        baseStats: {fileID: 11400000, guid: 9f19a3d99ad6d1c42a23b00b4f93446d, type: 2}
+        CSpeed: 3.5
+        CAttack: 18
+        CDef: 9
+        MHealth: 140
+        ManaBonus: 20
+        CCriticalRate: 0
+        CCriticalDamage: 0
+        PowerStats: 51.600002
+        CurrentLevel: 5
+      star: 3
+      isLineup: 0
+  - position: 4
+    character:
+      currentStats:
+        baseStats: {fileID: 11400000, guid: 74ea457f94ebad0438a2eacec2d18a05, type: 2}
+        CSpeed: 3
+        CAttack: 18
+        CDef: 9
+        MHealth: 140
+        ManaBonus: 20
+        CCriticalRate: 0
+        CCriticalDamage: 0
+        PowerStats: 50.600002
+        CurrentLevel: 5
+      star: 3
+      isLineup: 0
