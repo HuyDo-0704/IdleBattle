@@ -5,6 +5,9 @@ public class StageInfo : MonoBehaviour
     public static StageInfo Instance;
     
     [SerializeField] private TMP_Text stageNameText;
+    // Info Enemy Stage
+    [SerializeField] private GameObject EnemyContainer; // nơi chứa hình ảnh các enemy
+    [SerializeField] private GameObject EnemyPrefabs; // prefab của enemy
     private Animator animator;
     private StageData CurrentStage;
     public void Awake()
@@ -22,12 +25,39 @@ public class StageInfo : MonoBehaviour
         CurrentStage = data;
         animator.SetTrigger("Show");
         stageNameText.text = CurrentStage.stageName;
+        SpawnEnemy();
+
     }
     public void StartStage()
     {
         if (CurrentStage != null)
         {
             BattleManager.Instance.StartBattle(CurrentStage);
+        }
+    }
+    private void SpawnEnemy()
+    {
+        // Xóa enemy cũ
+        foreach (Transform child in EnemyContainer.transform)
+        {
+            Destroy(child.gameObject);
+        }
+
+        // Spawn enemy mới
+        foreach (EnemyLineupData enemy in CurrentStage.enemies)
+        {
+            if (enemy.character == null)
+                continue;
+
+            GameObject obj =
+                Instantiate(
+                    EnemyPrefabs,
+                    EnemyContainer.transform);
+
+            EnemyStageUI ui =
+                obj.GetComponent<EnemyStageUI>();
+
+            ui.UpdateEnemyUI(enemy.character);
         }
     }
 }

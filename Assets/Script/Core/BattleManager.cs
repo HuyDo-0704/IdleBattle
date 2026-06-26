@@ -9,6 +9,7 @@ public class BattleManager : MonoBehaviour
     public List<PositionSpawn> spawnPositionsEnemy;
     public BattleTeam enemyTeam;
     public BattleTeam playerTeam;
+
     private void Awake()
     {
         Instance = this;
@@ -21,10 +22,29 @@ public class BattleManager : MonoBehaviour
 
     private IEnumerator StartBattleRoutine(StageData stageData)
     {
+        Animator animator = GameManager.Instance.ChangeScene.GetComponent<Animator>();
+
+        // Đóng màn hình
+        animator.gameObject.SetActive(true);
+        animator.SetTrigger("Close");
+        yield return new WaitForSeconds(1f);
+
+        // Chuyển sang Battle UI
+        GameManager.Instance.ChangePanel(PanelType.Battle);
+
+        // Spawn toàn bộ nhân vật
         SpawnEnemyTeam(stageData.enemies);
         SpawnCharactersPlayerInBattle();
 
-        yield return new WaitForSeconds(1f);
+        // Đợi Unity hoàn thành việc khởi tạo object (Awake/Start)
+        yield return null;
+        yield return new WaitForEndOfFrame();
+
+        // Mở màn hình
+        animator.SetTrigger("Open");
+
+        // Đợi animation mở kết thúc
+        yield return new WaitForSeconds(3f);
 
         Debug.Log("=== BATTLE START ===");
 

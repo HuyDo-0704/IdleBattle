@@ -1,11 +1,19 @@
 using UnityEngine;
 
+public enum PanelType
+{
+    Home,
+    Battle
+}
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-
     public float CurrentPowerTeam;
     public int LevelPlayer;
+    [Header("Panels")]
+    [SerializeField] GameObject HomePanel;
+    [SerializeField] GameObject BattlePanel;
+    public GameObject ChangeScene; // về sau để private hoặc tách ra 1 script riêng để quản lý UI chuyển cảnh
 
     private void Awake()
     {
@@ -46,6 +54,12 @@ public class GameManager : MonoBehaviour
             CurrentPowerTeam +=
                 character.currentStats.PowerStats;
         }
+    }
+    // Hàm để Chuyển đổi Panel
+    public void ChangePanel(PanelType panel)
+    {
+        HomePanel.SetActive(panel == PanelType.Home);
+        BattlePanel.SetActive(panel == PanelType.Battle);
     }
 }
 
