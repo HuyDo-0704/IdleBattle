@@ -44,3 +44,6 @@ MonoBehaviour:
         CurrentLevel: 5
       star: 3
       isLineup: 0
+  items:
+  - itemData: {fileID: 11400000, guid: 77c90f2c0dc7edb41b2f4101f0fe7c33, type: 2}
+    itemRare: 1

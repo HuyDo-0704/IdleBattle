@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c65327417cdd1b4d8423d7e76bd5f19, type: 3}
+  m_Name: Heavy sword
+  m_EditorClassIdentifier: Assembly-CSharp::ItemData
+  itemID: 1
+  itemName: 'heavy sword '
+  icon:
+  - icon: {fileID: 21300000, guid: 629fa64cce08a9c44a81cc000f48c167, type: 3}
+    rare: 0
+  - icon: {fileID: 21300000, guid: 54acb40b719fc3f42a24c0b854d59aff, type: 3}
+    rare: 1
+  - icon: {fileID: 21300000, guid: 002bb89a3e525d44ca3f7c12ff4bdcd5, type: 3}
+    rare: 2
+  - icon: {fileID: 21300000, guid: 1e0758ed4dfe7634a8d3e2f853c331bd, type: 3}
+    rare: 3
+  - icon: {fileID: 21300000, guid: 71f6ea6a3c24aea45b9f2284ea3aec48, type: 3}
+    rare: 4
+  description: 
+  itemType: 0
+  hp: 0
+  atk: 10
+  def: 0
+  speed: -3
+  critRate: 0
+  critDamage: 0

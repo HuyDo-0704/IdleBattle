@@ -8,6 +8,7 @@ public class StageInfo : MonoBehaviour
     // Info Enemy Stage
     [SerializeField] private GameObject EnemyContainer; // nơi chứa hình ảnh các enemy
     [SerializeField] private GameObject EnemyPrefabs; // prefab của enemy
+    [SerializeField] private RewardPanel rewardPanel;
     private Animator animator;
     private StageData CurrentStage;
     public void Awake()
@@ -25,6 +26,7 @@ public class StageInfo : MonoBehaviour
         CurrentStage = data;
         animator.SetTrigger("Show");
         stageNameText.text = CurrentStage.stageName;
+        rewardPanel.ShowReward(CurrentStage.items);
         SpawnEnemy();
 
     }

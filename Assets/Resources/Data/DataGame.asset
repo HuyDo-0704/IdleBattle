@@ -34,3 +34,7 @@ MonoBehaviour:
     ImageStar: {fileID: -5276696516671652624, guid: 469b37fb7013ea4439e421351500dbac, type: 3}
   - starType: 3
     ImageStar: {fileID: 5319538358381289107, guid: 469b37fb7013ea4439e421351500dbac, type: 3}
+  itemDatabase:
+    items:
+    - {fileID: 11400000, guid: fa06ea95629d1724a959a5d4bb73f2cf, type: 2}
+    - {fileID: 11400000, guid: 77c90f2c0dc7edb41b2f4101f0fe7c33, type: 2}

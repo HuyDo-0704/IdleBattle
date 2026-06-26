@@ -14,6 +14,7 @@ public class DataGame : ScriptableObject
 {
     public TypeRealm[] typeRealms;
     public InfoStar[] UIStar;
+    public ItemDatabase itemDatabase;
     public CharacterBaseStats GetCharacter(string characterID, Realm realm)
     {
         return typeRealms?

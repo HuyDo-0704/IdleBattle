@@ -9,6 +9,7 @@ public class BattleManager : MonoBehaviour
     public List<PositionSpawn> spawnPositionsEnemy;
     public BattleTeam enemyTeam;
     public BattleTeam playerTeam;
+    private StageData CurrentStage; 
 
     private void Awake()
     {
@@ -17,6 +18,7 @@ public class BattleManager : MonoBehaviour
     // hàm để bắt đầu trận đấu
     public void StartBattle(StageData stageData)
     {
+        CurrentStage = stageData;
         StartCoroutine(StartBattleRoutine(stageData));
     }
 
@@ -160,13 +162,45 @@ public class BattleManager : MonoBehaviour
 
     public bool CheckBattleEnd()
     {
+        // Player thua
         if (!playerTeam.HasAliveMember())
+        {
+            BattleLose();
             return true;
+        }
 
+        // Player thắng
         if (!enemyTeam.HasAliveMember())
+        {
+            BattleWin();
             return true;
+        }
 
         return false;
+    }
+    private void BattleWin()
+    {
+        Debug.Log("PLAYER WIN");
+
+        GetRewardStage();
+        GameManager.Instance.ChangeScene.gameObject.SetActive(false);
+        GameManager.Instance.ChangePanel(PanelType.Home);
+        // TODO:
+        // Hiện Reward Panel
+        // Cộng EXP
+        // Mở khóa Stage tiếp theo
+    }
+    private void BattleLose()
+    {
+        Debug.Log("PLAYER LOSE");
+        GameManager.Instance.ChangePanel(PanelType.Home);
+        // TODO:
+        // Hiện panel thất bại
+    }
+    // hàm để nhận thưởng khi player thắng
+    public void GetRewardStage()
+    {
+        RewardManager.Instance.GiveStageReward(CurrentStage);
     }
 }
 
