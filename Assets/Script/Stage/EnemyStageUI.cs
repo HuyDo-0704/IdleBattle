@@ -26,10 +26,10 @@ public class EnemyStageUI : MonoBehaviour
     {
         int star = character.star;
 
-        Sprite emptyStar = DataManager.Instance.AllData.GetSpriteStar(StarType.Empty);
-        Sprite yellowStar = DataManager.Instance.AllData.GetSpriteStar(StarType.Yellow);
-        Sprite redStar = DataManager.Instance.AllData.GetSpriteStar(StarType.Red);
-        Sprite diamondStar = DataManager.Instance.AllData.GetSpriteStar(StarType.Diamond);
+        Sprite emptyStar = DataManager.Instance.DataGame.GetSpriteStar(StarType.Empty);
+        Sprite yellowStar = DataManager.Instance.DataGame.GetSpriteStar(StarType.Yellow);
+        Sprite redStar = DataManager.Instance.DataGame.GetSpriteStar(StarType.Red);
+        Sprite diamondStar = DataManager.Instance.DataGame.GetSpriteStar(StarType.Diamond);
 
         Image[] starImages = StarContainer.GetComponentsInChildren<Image>();
 

@@ -12,83 +12,100 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83b7566d5335bc3469975bfbd1dc331a, type: 3}
   m_Name: Stage1-4
   m_EditorClassIdentifier: 
+  stageID: 5
   stageName: Stage1-4
   enemies:
-  - currentStats:
-      baseStats: {fileID: 11400000, guid: 2870f6b056d523d48b2c5cc154200bdb, type: 2}
-      CSpeed: 0
-      CAttack: 0
-      CDef: 0
-      MHealth: 0
-      MMana: 0
-      CCriticalRate: 0
-      CCriticalDamage: 0
-      PowerStats: 0
-      CurrentLevel: 10
-    star: 3
-    isLineup: 0
-  - currentStats:
-      baseStats: {fileID: 11400000, guid: 2870f6b056d523d48b2c5cc154200bdb, type: 2}
-      CSpeed: 0
-      CAttack: 0
-      CDef: 0
-      MHealth: 0
-      MMana: 0
-      CCriticalRate: 0
-      CCriticalDamage: 0
-      PowerStats: 0
-      CurrentLevel: 10
-    star: 3
-    isLineup: 0
-  - currentStats:
-      baseStats: {fileID: 11400000, guid: 2870f6b056d523d48b2c5cc154200bdb, type: 2}
-      CSpeed: 0
-      CAttack: 0
-      CDef: 0
-      MHealth: 0
-      MMana: 0
-      CCriticalRate: 0
-      CCriticalDamage: 0
-      PowerStats: 0
-      CurrentLevel: 10
-    star: 3
-    isLineup: 0
-  - currentStats:
-      baseStats: {fileID: 11400000, guid: 2870f6b056d523d48b2c5cc154200bdb, type: 2}
-      CSpeed: 0
-      CAttack: 0
-      CDef: 0
-      MHealth: 0
-      MMana: 0
-      CCriticalRate: 0
-      CCriticalDamage: 0
-      PowerStats: 0
-      CurrentLevel: 10
-    star: 3
-    isLineup: 0
-  - currentStats:
-      baseStats: {fileID: 11400000, guid: 2870f6b056d523d48b2c5cc154200bdb, type: 2}
-      CSpeed: 0
-      CAttack: 0
-      CDef: 0
-      MHealth: 0
-      MMana: 0
-      CCriticalRate: 0
-      CCriticalDamage: 0
-      PowerStats: 0
-      CurrentLevel: 10
-    star: 3
-    isLineup: 0
-  - currentStats:
-      baseStats: {fileID: 11400000, guid: 2870f6b056d523d48b2c5cc154200bdb, type: 2}
-      CSpeed: 0
-      CAttack: 0
-      CDef: 0
-      MHealth: 0
-      MMana: 0
-      CCriticalRate: 0
-      CCriticalDamage: 0
-      PowerStats: 0
-      CurrentLevel: 10
-    star: 3
-    isLineup: 0
+  - position: 0
+    character:
+      currentStats:
+        baseStats: {fileID: 0}
+        CSpeed: 0
+        CAttack: 0
+        CDef: 0
+        MHealth: 0
+        ManaBonus: 0
+        CCriticalRate: 0
+        CCriticalDamage: 0
+        PowerStats: 0
+        CurrentLevel: 1
+      star: 0
+      isLineup: 0
+  - position: 0
+    character:
+      currentStats:
+        baseStats: {fileID: 0}
+        CSpeed: 0
+        CAttack: 0
+        CDef: 0
+        MHealth: 0
+        ManaBonus: 0
+        CCriticalRate: 0
+        CCriticalDamage: 0
+        PowerStats: 0
+        CurrentLevel: 1
+      star: 0
+      isLineup: 0
+  - position: 0
+    character:
+      currentStats:
+        baseStats: {fileID: 0}
+        CSpeed: 0
+        CAttack: 0
+        CDef: 0
+        MHealth: 0
+        ManaBonus: 0
+        CCriticalRate: 0
+        CCriticalDamage: 0
+        PowerStats: 0
+        CurrentLevel: 1
+      star: 0
+      isLineup: 0
+  - position: 0
+    character:
+      currentStats:
+        baseStats: {fileID: 0}
+        CSpeed: 0
+        CAttack: 0
+        CDef: 0
+        MHealth: 0
+        ManaBonus: 0
+        CCriticalRate: 0
+        CCriticalDamage: 0
+        PowerStats: 0
+        CurrentLevel: 1
+      star: 0
+      isLineup: 0
+  - position: 0
+    character:
+      currentStats:
+        baseStats: {fileID: 0}
+        CSpeed: 0
+        CAttack: 0
+        CDef: 0
+        MHealth: 0
+        ManaBonus: 0
+        CCriticalRate: 0
+        CCriticalDamage: 0
+        PowerStats: 0
+        CurrentLevel: 1
+      star: 0
+      isLineup: 0
+  - position: 0
+    character:
+      currentStats:
+        baseStats: {fileID: 0}
+        CSpeed: 0
+        CAttack: 0
+        CDef: 0
+        MHealth: 0
+        ManaBonus: 0
+        CCriticalRate: 0
+        CCriticalDamage: 0
+        PowerStats: 0
+        CurrentLevel: 1
+      star: 0
+      isLineup: 0
+  items: []
+  requireAliveCharacter: 3
+  requireRemainHPPercent: 70
+  requireMaxRound: 10

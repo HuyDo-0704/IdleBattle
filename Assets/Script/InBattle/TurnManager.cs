@@ -4,38 +4,54 @@ using UnityEngine;
 
 public class TurnManager : MonoBehaviour
 {
-    [SerializeField] private Queue<CharacterManager> turnQueue =
-        new Queue<CharacterManager>();
+    [SerializeField] private Queue<CharacterManager> turnQueue = new Queue<CharacterManager>();
+
+    [Header("Round")]
+    [SerializeField] private int maxRound = 20;
+
+    public int CurrentRound { get; private set; }
 
     public void SetUp()
     {
-        List<CharacterManager> allCharacters =
-            new List<CharacterManager>();
+        StopAllCoroutines();
 
-        allCharacters.AddRange(
-            BattleManager.Instance.playerTeam.members);
+        turnQueue.Clear();
 
-        allCharacters.AddRange(
-            BattleManager.Instance.enemyTeam.members);
+        CurrentRound = 1;
 
-        StartBattle(allCharacters);
+        BuildRoundQueue();
+
+        Debug.Log($"===== ROUND {CurrentRound} =====");
 
         StartCoroutine(BattleLoop());
     }
 
-    public void StartBattle(List<CharacterManager> allCharacters)
+    private void BuildRoundQueue()
     {
-        Debug.Log($"Total Character : {allCharacters.Count}");
+        turnQueue.Clear();
 
-        allCharacters.Sort(
-            (a, b) =>
-            b.Stats.CSpeed.CompareTo(
-                a.Stats.CSpeed));
+        List<CharacterManager> aliveCharacters = new List<CharacterManager>();
 
-        foreach (var character in allCharacters)
+        foreach (CharacterManager character in BattleManager.Instance.playerTeam.members)
         {
-            Debug.Log(
-                $"Queue Add : {character.name} SPD:{character.Stats.CSpeed}");
+            if (!character.Hud.IsDead)
+                aliveCharacters.Add(character);
+        }
+
+        foreach (CharacterManager character in BattleManager.Instance.enemyTeam.members)
+        {
+            if (!character.Hud.IsDead)
+                aliveCharacters.Add(character);
+        }
+
+        aliveCharacters.Sort(
+            (a, b) => b.Stats.CSpeed.CompareTo(a.Stats.CSpeed));
+
+        Debug.Log($"Round {CurrentRound} - Alive : {aliveCharacters.Count}");
+
+        foreach (CharacterManager character in aliveCharacters)
+        {
+            Debug.Log($"Queue Add : {character.name} SPD:{character.Stats.CSpeed}");
 
             turnQueue.Enqueue(character);
         }
@@ -45,9 +61,30 @@ public class TurnManager : MonoBehaviour
     {
         while (!BattleManager.Instance.CheckBattleEnd())
         {
-            yield return StartCoroutine(NextTurn());
+            if (CurrentRound > maxRound)
+            {
+                Debug.Log("Max Round Reached!");
 
-            yield return new WaitForSeconds(1f);
+                BattleManager.Instance.BattleLose();
+
+                yield break;
+            }
+
+            while (turnQueue.Count > 0)
+            {
+                yield return StartCoroutine(NextTurn());
+
+                if (BattleManager.Instance.CheckBattleEnd())
+                    yield break;
+
+                yield return new WaitForSeconds(1f);
+            }
+
+            CurrentRound++;
+
+            Debug.Log($"===== ROUND {CurrentRound} =====");
+
+            BuildRoundQueue();
         }
 
         Debug.Log("=== BATTLE END ===");
@@ -56,23 +93,15 @@ public class TurnManager : MonoBehaviour
     private IEnumerator NextTurn()
     {
         if (turnQueue.Count == 0)
-        {
-            Debug.LogError("Queue Empty");
             yield break;
-        }
 
-        CharacterManager current =
-            turnQueue.Dequeue();
+        CharacterManager current = turnQueue.Dequeue();
 
-        Debug.Log(
-            $"TURN : {current.name} HP:{current.Hud.currentHealth}");
+        Debug.Log($"TURN : {current.name}");
 
         if (!current.Hud.IsDead)
         {
-            yield return StartCoroutine(
-                current.Acting());
+            yield return StartCoroutine(current.Acting());
         }
-
-        turnQueue.Enqueue(current);
     }
 }

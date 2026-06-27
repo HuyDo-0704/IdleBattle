@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83b7566d5335bc3469975bfbd1dc331a, type: 3}
   m_Name: Stage1-1
   m_EditorClassIdentifier: 
+  stageID: 1
   stageName: Stage 1-1
   enemies:
   - position: 0
@@ -47,3 +48,6 @@ MonoBehaviour:
   items:
   - itemData: {fileID: 11400000, guid: 77c90f2c0dc7edb41b2f4101f0fe7c33, type: 2}
     itemRare: 1
+  requireAliveCharacter: 3
+  requireRemainHPPercent: 70
+  requireMaxRound: 10

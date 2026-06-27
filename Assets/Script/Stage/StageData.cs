@@ -4,9 +4,18 @@ using System.Collections.Generic;
 [CreateAssetMenu(fileName = "StageData", menuName = "Game/Stage")]
 public class StageData : ScriptableObject
 {
+    public int stageID;
     public string stageName;
     public List<EnemyLineupData> enemies;
     public List<ItemReward> items;
+    [Header("Star Condition")]
+
+    public int requireAliveCharacter = 3;
+
+    [Range(0,100)]
+    public int requireRemainHPPercent = 70;
+
+    public int requireMaxRound = 10;
     
 }
 [System.Serializable]

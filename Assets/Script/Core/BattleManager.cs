@@ -189,8 +189,9 @@ public class BattleManager : MonoBehaviour
         // Hiện Reward Panel
         // Cộng EXP
         // Mở khóa Stage tiếp theo
+        StageManager.Instance.CompleteStage(CurrentStage);
     }
-    private void BattleLose()
+    public void BattleLose()
     {
         Debug.Log("PLAYER LOSE");
         GameManager.Instance.ChangePanel(PanelType.Home);

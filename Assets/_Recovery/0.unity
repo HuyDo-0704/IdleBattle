@@ -1833,7 +1833,6 @@ Transform:
   - {fileID: 1049966900}
   - {fileID: 1513249472}
   - {fileID: 2006757613}
-  - {fileID: 695753358}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &82844820
@@ -2912,10 +2911,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StageButton
   stageData: {fileID: 11400000, guid: e66a627074b8f3b4fa2a23fc86f84f8b, type: 2}
-  starImages:
-  - {fileID: 1077763518}
-  - {fileID: 1149109300}
-  - {fileID: 134854696}
 --- !u!114 &175563328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2962,7 +2957,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 175563327}
         m_TargetAssemblyTypeName: StageButton, Assembly-CSharp
-        m_MethodName: ShowStageInfo
+        m_MethodName: showStageInfo
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3138,10 +3133,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StageButton
   stageData: {fileID: 11400000, guid: 96334ca8e810d554f837739a71320ec0, type: 2}
-  starImages:
-  - {fileID: 955138376}
-  - {fileID: 303312391}
-  - {fileID: 645914990}
 --- !u!114 &179780991
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3188,7 +3179,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 179780990}
         m_TargetAssemblyTypeName: StageButton, Assembly-CSharp
-        m_MethodName: ShowStageInfo
+        m_MethodName: showStageInfo
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6350,10 +6341,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StageButton
   stageData: {fileID: 11400000, guid: f4272bf3142595d4d9b385520ea4412c, type: 2}
-  starImages:
-  - {fileID: 1894757200}
-  - {fileID: 812105727}
-  - {fileID: 878195392}
 --- !u!114 &439597595
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6400,7 +6387,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 439597594}
         m_TargetAssemblyTypeName: StageButton, Assembly-CSharp
-        m_MethodName: ShowStageInfo
+        m_MethodName: showStageInfo
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8438,7 +8425,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3d24ac89c044244682d859881c9d00f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TurnManager
-  maxRound: 20
 --- !u!1 &580766480
 GameObject:
   m_ObjectHideFlags: 0
@@ -10302,61 +10288,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 690637924}
   m_CullTransparentMesh: 1
---- !u!1 &695753357
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 695753358}
-  - component: {fileID: 695753359}
-  m_Layer: 0
-  m_Name: StageManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &695753358
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 695753357}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 82844819}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &695753359
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 695753357}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d09969657b78a9f4cb5a172042eecf42, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::StageManager
-  chapters:
-  - stages:
-    - {fileID: 947093694}
-    - {fileID: 179780990}
-    - {fileID: 175563327}
-    - {fileID: 1757224850}
-    - {fileID: 439597594}
-    - {fileID: 857750222}
-    IsUnlocked: 1
-  stageSaves: []
-  CurrentUnlockedStageID: 0
 --- !u!1 &699421377
 GameObject:
   m_ObjectHideFlags: 0
@@ -11464,7 +11395,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9f0bf4db8e49c74da293d7f181212e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DataGame: {fileID: 11400000, guid: 31b62de72a43fd740ab90cdb36744252, type: 2}
+  AllData: {fileID: 11400000, guid: 31b62de72a43fd740ab90cdb36744252, type: 2}
 --- !u!1 &772535952
 GameObject:
   m_ObjectHideFlags: 0
@@ -12324,6 +12255,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 832763390}
+  - component: {fileID: 832763391}
   m_Layer: 0
   m_Name: WorldMapPanel
   m_TagString: Untagged
@@ -12354,6 +12286,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &832763391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 832763389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d09969657b78a9f4cb5a172042eecf42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StageManager
 --- !u!1 &834407195
 GameObject:
   m_ObjectHideFlags: 0
@@ -12557,10 +12501,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StageButton
   stageData: {fileID: 11400000, guid: 5c80cb854fe1585469ea7abcb16785e7, type: 2}
-  starImages:
-  - {fileID: 1025485567}
-  - {fileID: 1203269754}
-  - {fileID: 1115641126}
 --- !u!114 &857750223
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12607,7 +12547,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 857750222}
         m_TargetAssemblyTypeName: StageButton, Assembly-CSharp
-        m_MethodName: ShowStageInfo
+        m_MethodName: showStageInfo
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -14114,10 +14054,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StageButton
   stageData: {fileID: 11400000, guid: de19e9675cff8054d8a5b54600e9e4d3, type: 2}
-  starImages:
-  - {fileID: 1859328331}
-  - {fileID: 612206835}
-  - {fileID: 397080585}
 --- !u!114 &947093695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17776,6 +17712,7 @@ GameObject:
   - component: {fileID: 1246611964}
   - component: {fileID: 1246611963}
   - component: {fileID: 1246611962}
+  - component: {fileID: 1246611965}
   m_Layer: 0
   m_Name: SatgeButton
   m_TagString: Untagged
@@ -17859,18 +17796,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 695753359}
-        m_TargetAssemblyTypeName: StageManager, Assembly-CSharp
-        m_MethodName: RefreshChapter
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
 --- !u!114 &1246611963
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17909,6 +17834,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1246611960}
   m_CullTransparentMesh: 1
+--- !u!114 &1246611965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1246611960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5901db2c6871e249b1c7ddc6110a5be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stageData: {fileID: 11400000, guid: de19e9675cff8054d8a5b54600e9e4d3, type: 2}
 --- !u!1 &1256580844
 GameObject:
   m_ObjectHideFlags: 0
@@ -23489,10 +23427,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StageButton
   stageData: {fileID: 11400000, guid: ae5e22c6b83c71447be6e9b165aab5e6, type: 2}
-  starImages:
-  - {fileID: 1035419145}
-  - {fileID: 810520197}
-  - {fileID: 1037715092}
 --- !u!114 &1757224851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23539,7 +23473,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1757224850}
         m_TargetAssemblyTypeName: StageButton, Assembly-CSharp
-        m_MethodName: ShowStageInfo
+        m_MethodName: showStageInfo
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
