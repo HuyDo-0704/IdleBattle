@@ -182,26 +182,29 @@ public class BattleManager : MonoBehaviour
     {
         Debug.Log("PLAYER WIN");
 
-        GetRewardStage();
-        GameManager.Instance.ChangeScene.gameObject.SetActive(false);
-        GameManager.Instance.ChangePanel(PanelType.Home);
-        // TODO:
-        // Hiện Reward Panel
-        // Cộng EXP
-        // Mở khóa Stage tiếp theo
+        List<ItemReward> rewards = GetRewardStage();
+
         StageManager.Instance.CompleteStage(CurrentStage);
+
+        GameManager.Instance.ChangeScene.gameObject.SetActive(false);
+
+        PanelResultUI.Instance.UpdatePanelUI(
+            PanelResultUI.result.win,
+            rewards);
     }
     public void BattleLose()
     {
         Debug.Log("PLAYER LOSE");
-        GameManager.Instance.ChangePanel(PanelType.Home);
-        // TODO:
-        // Hiện panel thất bại
+
+
+        PanelResultUI.Instance.UpdatePanelUI(
+            PanelResultUI.result.lose,
+            null);
     }
     // hàm để nhận thưởng khi player thắng
-    public void GetRewardStage()
+    public List<ItemReward> GetRewardStage()
     {
-        RewardManager.Instance.GiveStageReward(CurrentStage);
+        return RewardManager.Instance.GiveStageReward(CurrentStage);
     }
 }
 

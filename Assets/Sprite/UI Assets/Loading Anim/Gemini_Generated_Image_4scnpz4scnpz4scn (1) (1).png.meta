@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: e0072dd1a3b775b4c84cdb61ce79336e
+guid: 2ef7fcc8b5801d04f9e2b6e95b42d6fe
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8754007347876318364
-    second: UI_Mall_BannerBig1_Img2_0
+      213: 2408163871356335261
+    second: Gemini_Generated_Image_4scnpz4scnpz4scn (1) (1)_0
+  - first:
+      213: -8262561865322632092
+    second: Gemini_Generated_Image_4scnpz4scnpz4scn (1) (1)_1
+  - first:
+      213: -4221766127916753710
+    second: Gemini_Generated_Image_4scnpz4scnpz4scn (1) (1)_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,23 +106,67 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: UI_Mall_BannerBig1_Img2_0
+      name: Gemini_Generated_Image_4scnpz4scnpz4scn (1) (1)_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 280
-        height: 80
+        x: 125
+        y: 4
+        width: 587
+        height: 472
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 153, y: 0, z: 31, w: 0}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c9cc35b5d4b7c7970800000000000000
-      internalID: 8754007347876318364
+      spriteID: d94bf1138448b6120800000000000000
+      internalID: 2408163871356335261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gemini_Generated_Image_4scnpz4scnpz4scn (1) (1)_1
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 18
+        width: 253
+        height: 439
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46c61caa2cb755d80800000000000000
+      internalID: -8262561865322632092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gemini_Generated_Image_4scnpz4scnpz4scn (1) (1)_2
+      rect:
+        serializedVersion: 2
+        x: 1396
+        y: 16
+        width: 587
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2dcdeb413164965c0800000000000000
+      internalID: -4221766127916753710
       vertices: []
       indices: 
       edges: []
@@ -125,7 +175,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 1440ec489a1c56f4992abeb6fce913c6
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +185,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      UI_Mall_BannerBig1_Img2_0: 8754007347876318364
+      Gemini_Generated_Image_4scnpz4scnpz4scn (1) (1)_0: 2408163871356335261
+      Gemini_Generated_Image_4scnpz4scnpz4scn (1) (1)_1: -8262561865322632092
+      Gemini_Generated_Image_4scnpz4scnpz4scn (1) (1)_2: -4221766127916753710
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

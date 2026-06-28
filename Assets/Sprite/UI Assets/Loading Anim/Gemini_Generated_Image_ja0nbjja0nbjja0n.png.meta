@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: e0072dd1a3b775b4c84cdb61ce79336e
+guid: c28a8fcfa6d9cab4f96d647a22078779
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8754007347876318364
-    second: UI_Mall_BannerBig1_Img2_0
+      213: 754554862769531348
+    second: Gemini_Generated_Image_ja0nbjja0nbjja0n_0
+  - first:
+      213: -6103676319383607907
+    second: Gemini_Generated_Image_ja0nbjja0nbjja0n_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +40,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -75,7 +78,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -100,23 +103,45 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: UI_Mall_BannerBig1_Img2_0
+      name: Gemini_Generated_Image_ja0nbjja0nbjja0n_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 280
-        height: 80
+        y: 490
+        width: 1440
+        height: 230
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 153, y: 0, z: 31, w: 0}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c9cc35b5d4b7c7970800000000000000
-      internalID: 8754007347876318364
+      spriteID: 4d9ebee56a7b87a00800000000000000
+      internalID: 754554862769531348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gemini_Generated_Image_ja0nbjja0nbjja0n_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1440
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d952d27e9b26b4ba0800000000000000
+      internalID: -6103676319383607907
       vertices: []
       indices: 
       edges: []
@@ -125,7 +150,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 1440ec489a1c56f4992abeb6fce913c6
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +160,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      UI_Mall_BannerBig1_Img2_0: 8754007347876318364
+      Gemini_Generated_Image_ja0nbjja0nbjja0n_0: 754554862769531348
+      Gemini_Generated_Image_ja0nbjja0nbjja0n_1: -6103676319383607907
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

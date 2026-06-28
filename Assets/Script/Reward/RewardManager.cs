@@ -17,20 +17,27 @@ public class RewardManager : MonoBehaviour
     {
         Instance = this;
     }
-    public void GiveStageReward(StageData stage)
+    public List<ItemReward> GiveStageReward(StageData stage)
     {
+        List<ItemReward> rewards = new List<ItemReward>();
+
         foreach (ItemReward reward in stage.items)
         {
-            // check tỉ lệ rơi
             float chance = GetDropChance(reward.itemRare);
 
             if (Random.Range(0f, 100f) > chance)
                 continue;
 
-            ItemInventoryManager.Instance.AddItem(reward.itemData, reward.itemRare);
+            ItemInventoryManager.Instance.AddItem(
+                reward.itemData,
+                reward.itemRare);
+
+            rewards.Add(reward);
 
             Debug.Log($"Reward : {reward.itemData.itemName}");
         }
+
+        return rewards;
     }
     // hàm lấy tỉ lệ rơi item
     private float GetDropChance(ItemRare rare)

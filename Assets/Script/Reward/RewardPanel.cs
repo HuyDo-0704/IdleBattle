@@ -14,6 +14,9 @@ public class RewardPanel : MonoBehaviour
 
         Clear();
 
+        if (rewards == null)
+            return;
+
         foreach (ItemReward item in rewards)
         {
             ItemRewardUI ui =

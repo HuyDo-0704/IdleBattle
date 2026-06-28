@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: e0072dd1a3b775b4c84cdb61ce79336e
+guid: b461651541241824aba3d593b81e8830
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8754007347876318364
-    second: UI_Mall_BannerBig1_Img2_0
+      213: 6772686323929874281
+    second: Gemini_Generated_Image_2xcy492xcy492xcy_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -100,23 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: UI_Mall_BannerBig1_Img2_0
+      name: Gemini_Generated_Image_2xcy492xcy492xcy_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 280
-        height: 80
+        width: 1380
+        height: 768
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 153, y: 0, z: 31, w: 0}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c9cc35b5d4b7c7970800000000000000
-      internalID: 8754007347876318364
+      spriteID: 96f7cf0145a6dfd50800000000000000
+      internalID: 6772686323929874281
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 1440ec489a1c56f4992abeb6fce913c6
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      UI_Mall_BannerBig1_Img2_0: 8754007347876318364
+      Gemini_Generated_Image_2xcy492xcy492xcy_0: 6772686323929874281
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
