@@ -63,14 +63,6 @@ public class GameManager : MonoBehaviour
     }
 }
 
-[System.Serializable]
-public class Character
-{
-    public CurrentStats currentStats;
-    public int star;
-    public bool isLineup;
-    
-}
 
 
 

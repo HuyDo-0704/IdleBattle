@@ -18,7 +18,6 @@ public class CardButton : MonoBehaviour
         // Update status GameObject
         if (Status == null)
         {
-            Debug.LogWarning("Status GameObject is not assigned.");
             return;
         }
         Status.SetActive(character.isLineup);
@@ -40,7 +39,7 @@ public class CardButton : MonoBehaviour
         }
 
         Character character = CharacterInventoryManager.Instance.ownedCharacters[index];
-        CharDetail.Instance.UpdateInfo(character.currentStats, infoButton.characterID);
+        CharDetail.Instance.UpdateInfo(character, infoButton.characterID);
         CharDetail.Instance.OpenPanel();
     }
 }

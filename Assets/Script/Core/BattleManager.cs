@@ -9,7 +9,7 @@ public class BattleManager : MonoBehaviour
     public List<PositionSpawn> spawnPositionsEnemy;
     public BattleTeam enemyTeam;
     public BattleTeam playerTeam;
-    private StageData CurrentStage; 
+    [HideInInspector] public StageData CurrentStage; 
 
     private void Awake()
     {

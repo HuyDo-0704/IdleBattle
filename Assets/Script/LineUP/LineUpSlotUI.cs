@@ -53,7 +53,7 @@ public class InfoCharButton
     public void InitializeCard(Character character)
     {
         NameText.text = character.currentStats.baseStats.characterName;
-        LevelText.text = $"{character.currentStats.CurrentLevel}";
+        LevelText.text = $"{character.CurrentLevel}";
         RarityText.text = character.currentStats.baseStats.rare.rarity.ToString();
         characterImage.sprite = character.currentStats.baseStats.characterIcon;
         GetSpriteStar(character);

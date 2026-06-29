@@ -17,7 +17,7 @@ public class EnemyStageUI : MonoBehaviour
         }
 
         EnemyIcon.sprite = enemy.currentStats.baseStats.characterIcon;
-        LevelText.text = $"Lv. {enemy.currentStats.CurrentLevel}";
+        LevelText.text = $"Lv. {enemy.CurrentLevel}";
 
         // Cập nhật số lượng sao
         GetSpriteStar(enemy);

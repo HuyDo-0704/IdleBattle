@@ -23,12 +23,12 @@ public class CharDetail : MonoBehaviour
         animator.SetTrigger("Info");
     }
     // Update is called once per frame
-    public void UpdateInfo( CurrentStats CharStats , int charID )
+    public void UpdateInfo( Character character , int charID )
     {
 
-        charName.text = CharStats.baseStats.characterName;
+        charName.text = character.currentStats.baseStats.characterName;
         //RarityFrame.sprite = charBase.rarityFrame;
-        statsIndex.UpdateStats(CharStats);
+        statsIndex.UpdateStats(character);
         // Xóa CharStand cũ nếu có
         foreach (Transform child in CharStand.transform)
         {
@@ -36,9 +36,9 @@ public class CharDetail : MonoBehaviour
         }
 
         // Tạo CharStand mới
-        if (CharStats.baseStats.characterPrefab != null)
+        if (character.currentStats.baseStats.characterPrefab != null)
         {
-            GameObject charInstance = Instantiate(CharStats.baseStats.characterPrefab, CharStand.transform);
+            GameObject charInstance = Instantiate(character.currentStats.baseStats.characterPrefab, CharStand.transform);
             // set position local về (0,0,0)
             charInstance.transform.localPosition = Vector3.zero;
             // set scale local về (1,1,1)
@@ -59,7 +59,7 @@ public class CharDetail : MonoBehaviour
         }
 
         Character nextChar = CharacterInventoryManager.Instance.ownedCharacters[index];
-        UpdateInfo(nextChar.currentStats, nextCharID);
+        UpdateInfo(nextChar, nextCharID);
     }
     public void PreviousChar()
     {
@@ -73,6 +73,6 @@ public class CharDetail : MonoBehaviour
         }
 
         Character prevChar = CharacterInventoryManager.Instance.ownedCharacters[index];
-        UpdateInfo(prevChar.currentStats, prevCharID);
+        UpdateInfo(prevChar, prevCharID);
     }
 }

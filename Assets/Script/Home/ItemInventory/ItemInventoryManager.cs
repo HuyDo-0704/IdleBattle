@@ -5,9 +5,10 @@ using System.IO;
 public class ItemInventoryManager : MonoBehaviour
 {
     public static ItemInventoryManager Instance;
-
-    public List<Item> ownedItems =
-        new List<Item>();
+    [Header("Currencies")]
+    public int GoldCoin; // vàng của người chơi 
+    public int DiamonCoin;
+    public List<Item> ownedItems = new List<Item>();
 
     private string SavePath =>
         Path.Combine(Application.persistentDataPath,

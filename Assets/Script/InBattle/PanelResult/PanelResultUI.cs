@@ -16,7 +16,9 @@ public class PanelResultUI : MonoBehaviour
     [SerializeField] private Sprite DefeatPanel;
 
     [SerializeField] private RewardPanel rewardPanel;
-
+    [Header("Exp Panel UI")]
+    [SerializeField] GameObject CharPrefabs;
+    [SerializeField] GameObject container;
     private void Awake()
     {
         Instance = this;
@@ -39,13 +41,30 @@ public class PanelResultUI : MonoBehaviour
                 break;
         }
     }
+    private void ShowCharacterExp(int addExp)
+    {
+        // Xóa UI cũ
+        foreach (Transform child in container.transform)
+            Destroy(child.gameObject);
 
+        // Spawn UI cho từng nhân vật
+        foreach (Character character in CharacterInventoryManager.Instance.ownedCharacters)
+        {
+            GameObject obj = Instantiate(CharPrefabs, container.transform);
+
+            CharacterExpUI ui = obj.GetComponent<CharacterExpUI>();
+
+            ui.Setup(character);
+
+            StartCoroutine(ui.PlayExpAnimation(addExp));
+        }
+    }
     private void Victory(List<ItemReward> rewards)
     {
         BG.SetActive(true);
 
         BG.GetComponent<Image>().sprite = VictoryPanel;
-
+        ShowCharacterExp(BattleManager.Instance.CurrentStage.expReward);
         rewardPanel.ShowReward(rewards);
     }
 
@@ -55,11 +74,11 @@ public class PanelResultUI : MonoBehaviour
 
         BG.GetComponent<Image>().sprite = DefeatPanel;
 
-        rewardPanel.Hide();
     }
 
-    public void Hide()
+    public void HidePanel()
     {
+        GameManager.Instance.ChangePanel(PanelType.Home);
         gameObject.SetActive(false);
     }
 }

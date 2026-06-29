@@ -7,10 +7,10 @@ public static class DamageCalculator
         CharacterManager defender)
     {
         float attack =
-            attacker.Stats.CAttack;
+            attacker.CChartacter.currentStats.CAttack;
 
         float defense =
-            defender.Stats.CDef;
+            defender.CChartacter.currentStats.CDef;
 
         float damage =
             Mathf.Max(1, attack - defense);

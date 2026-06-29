@@ -47,13 +47,13 @@ public class HudSystem : MonoBehaviour
 
         if (owner != null)
         {
-            if (owner.Stats.MHealth <= 0)
-                owner.Stats.InitializeStats();
+            if (owner.CChartacter.currentStats.MHealth <= 0)
+                owner.CChartacter.currentStats.InitializeStats(owner.CChartacter.CurrentLevel);
 
-            maxHealth = owner.Stats.MHealth;
+            maxHealth = owner.CChartacter.currentStats.MHealth;
 
             currentHealth = maxHealth;
-            currentMana = 0 + owner.Stats.ManaBonus;
+            currentMana = 0 + owner.CChartacter.currentStats.ManaBonus;
         }
 
         anim = GetComponent<Animator>();

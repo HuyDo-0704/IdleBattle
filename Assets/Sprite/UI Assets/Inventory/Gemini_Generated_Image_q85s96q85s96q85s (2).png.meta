@@ -303,10 +303,10 @@ TextureImporter:
       name: Gemini_Generated_Image_q85s96q85s96q85s (2)_8
       rect:
         serializedVersion: 2
-        x: 1252
-        y: 181
-        width: 887
-        height: 648
+        x: 1261
+        y: 195
+        width: 830
+        height: 634
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

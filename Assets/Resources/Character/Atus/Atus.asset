@@ -19,7 +19,7 @@ MonoBehaviour:
   characterPrefab: {fileID: 1382782348239096657, guid: 6c4d025f7cfa84371b946fd4062d48a9, type: 3}
   rare:
     rarity: 2
-  DeHealth: 40
+  DeHealth: 70
   DeAttack: 10
   DeDefense: 5
   ManaBonus: 0

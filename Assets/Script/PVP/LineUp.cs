@@ -52,7 +52,7 @@ public class Lineup : MonoBehaviour
             result.Add(new NetworkCharacterData 
             { 
                 characterID = character.currentStats.baseStats.characterID, 
-                level = (int)character.currentStats.CurrentLevel, 
+                level = character.CurrentLevel, 
                 star = character.star, 
                 realm = (int)character.currentStats.baseStats.realm, 
                 position = (int)c.position

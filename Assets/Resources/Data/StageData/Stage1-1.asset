@@ -27,7 +27,9 @@ MonoBehaviour:
         CCriticalRate: 0
         CCriticalDamage: 0
         PowerStats: 51.600002
-        CurrentLevel: 5
+      PowerStats: 0
+      CurrentLevel: 1
+      CurrentExp: 0
       star: 3
       isLineup: 0
   - position: 4
@@ -42,9 +44,13 @@ MonoBehaviour:
         CCriticalRate: 0
         CCriticalDamage: 0
         PowerStats: 50.600002
-        CurrentLevel: 5
+      PowerStats: 0
+      CurrentLevel: 1
+      CurrentExp: 0
       star: 3
       isLineup: 0
+  expReward: 100
+  GoldReward: 200
   items:
   - itemData: {fileID: 11400000, guid: 77c90f2c0dc7edb41b2f4101f0fe7c33, type: 2}
     itemRare: 1

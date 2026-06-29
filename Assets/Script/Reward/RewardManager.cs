@@ -36,7 +36,12 @@ public class RewardManager : MonoBehaviour
 
             Debug.Log($"Reward : {reward.itemData.itemName}");
         }
-
+        foreach (Character c in CharacterInventoryManager.Instance.ownedCharacters)
+        {
+            if (c.isLineup)
+                c.AddExp(stage.expReward);
+        }
+        
         return rewards;
     }
     // hàm lấy tỉ lệ rơi item

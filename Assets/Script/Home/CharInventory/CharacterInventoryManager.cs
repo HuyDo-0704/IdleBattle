@@ -36,7 +36,7 @@ public class CharacterInventoryManager : MonoBehaviour
             if (character.currentStats == null)
                 continue;
 
-            character.currentStats.InitializeStats();
+            character.currentStats.InitializeStats(character.CurrentLevel);
         }
 
         Debug.Log($"Initialized {ownedCharacters.Count} characters");

@@ -7,6 +7,9 @@ public class StageData : ScriptableObject
     public int stageID;
     public string stageName;
     public List<EnemyLineupData> enemies;
+    [Header("Reward")]
+    public int expReward;
+    public int GoldReward;
     public List<ItemReward> items;
     [Header("Star Condition")]
 
