@@ -10,7 +10,7 @@ public class CharacterManager : MonoBehaviour
     {
         CheckState ();
     }
-    void CheckState ()
+    public void CheckState ()
     {
         if (currentState == State.Idle)
         {

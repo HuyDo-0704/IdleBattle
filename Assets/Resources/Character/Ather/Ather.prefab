@@ -2114,7 +2114,7 @@ MonoBehaviour:
   friendlyColor: {r: 0, g: 1, b: 0, a: 1}
   enemyColor: {r: 1, g: 0, b: 0, a: 1}
   owner: {fileID: 0}
-  typeTeam: 1
+  typeTeam: 0
   maxHealth: 0
   currentHealth: 0
   currentMana: 0
@@ -3832,17 +3832,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Hud: {fileID: 5648833134696787966}
-  Stats:
-    baseStats: {fileID: 11400000, guid: 9f19a3d99ad6d1c42a23b00b4f93446d, type: 2}
-    CSpeed: 0
-    CAttack: 0
-    CDef: 0
-    MHealth: 0
-    ManaBonus: 0
-    CCriticalRate: 0
-    CCriticalDamage: 0
+  CChartacter:
+    currentStats:
+      baseStats: {fileID: 0}
+      CSpeed: 0
+      CAttack: 0
+      CDef: 0
+      MHealth: 0
+      ManaBonus: 0
+      CCriticalRate: 0
+      CCriticalDamage: 0
+      PowerStats: 0
     PowerStats: 0
     CurrentLevel: 1
+    CurrentExp: 0
+    star: 0
+    isLineup: 0
   currentState: 0
 --- !u!1 &7288385496521639425
 GameObject:
