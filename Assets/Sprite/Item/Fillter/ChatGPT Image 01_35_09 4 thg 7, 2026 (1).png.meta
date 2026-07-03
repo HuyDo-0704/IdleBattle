@@ -1,34 +1,10 @@
 fileFormatVersion: 2
-guid: 303847b21e3c41643814ebc5ef09d5da
+guid: 77105532b37f1ba46aee3421f11755cb
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1537966161198977013
-    second: Gemini_Generated_Image_q85s96q85s96q85s (2)_0
-  - first:
-      213: -1492381852225829458
-    second: Gemini_Generated_Image_q85s96q85s96q85s (2)_1
-  - first:
-      213: -1373980206729959460
-    second: Gemini_Generated_Image_q85s96q85s96q85s (2)_2
-  - first:
-      213: -4826698001664414988
-    second: Gemini_Generated_Image_q85s96q85s96q85s (2)_3
-  - first:
-      213: 7588432963727975711
-    second: Gemini_Generated_Image_q85s96q85s96q85s (2)_4
-  - first:
-      213: -7450720525193450341
-    second: Gemini_Generated_Image_q85s96q85s96q85s (2)_5
-  - first:
-      213: 7702789692272224788
-    second: Gemini_Generated_Image_q85s96q85s96q85s (2)_6
-  - first:
-      213: 4616828170220501939
-    second: Gemini_Generated_Image_q85s96q85s96q85s (2)_7
-  - first:
-      213: 8074846948484047659
-    second: Gemini_Generated_Image_q85s96q85s96q85s (2)_8
+      213: -5793503643379915486
+    second: ChatGPT Image 01_35_09 4 thg 7, 2026 (1)_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -99,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -124,221 +100,199 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Gemini_Generated_Image_q85s96q85s96q85s (2)_0
+      name: ChatGPT Image 01_35_09 4 thg 7, 2026 (1)_0
       rect:
         serializedVersion: 2
-        x: 105
-        y: 656
-        width: 1132
-        height: 969
+        x: 9
+        y: 293
+        width: 283
+        height: 204
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 25, y: 40, z: 25, w: 25}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5ff06da3314f75510800000000000000
-      internalID: 1537966161198977013
+      spriteID: 225a863b127599fa0800000000000000
+      internalID: -5793503643379915486
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Gemini_Generated_Image_q85s96q85s96q85s (2)_1
+      name: ChatGPT Image 01_35_09 4 thg 7, 2026 (1)_1
       rect:
         serializedVersion: 2
-        x: 1262
-        y: 1330
-        width: 260
-        height: 260
+        x: 302
+        y: 293
+        width: 228
+        height: 204
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ea507d4cc9ef94be0800000000000000
-      internalID: -1492381852225829458
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Gemini_Generated_Image_q85s96q85s96q85s (2)_2
-      rect:
-        serializedVersion: 2
-        x: 1525
-        y: 1330
-        width: 260
-        height: 260
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: cd761791844aeece0800000000000000
-      internalID: -1373980206729959460
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Gemini_Generated_Image_q85s96q85s96q85s (2)_3
-      rect:
-        serializedVersion: 2
-        x: 1788
-        y: 1330
-        width: 264
-        height: 260
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4fa64bc8dbf140db0800000000000000
-      internalID: -4826698001664414988
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Gemini_Generated_Image_q85s96q85s96q85s (2)_4
-      rect:
-        serializedVersion: 2
-        x: 2176
-        y: 658
-        width: 288
-        height: 939
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f15eed443978f4960800000000000000
-      internalID: 7588432963727975711
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Gemini_Generated_Image_q85s96q85s96q85s (2)_5
-      rect:
-        serializedVersion: 2
-        x: 1263
-        y: 1067
-        width: 260
-        height: 260
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b9ce12f6829b99890800000000000000
-      internalID: -7450720525193450341
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Gemini_Generated_Image_q85s96q85s96q85s (2)_6
-      rect:
-        serializedVersion: 2
-        x: 1263
-        y: 861
-        width: 385
-        height: 167
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 41a2d6bf96ec5ea60800000000000000
-      internalID: 7702789692272224788
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Gemini_Generated_Image_q85s96q85s96q85s (2)_7
-      rect:
-        serializedVersion: 2
-        x: 138
-        y: 166
-        width: 1064
-        height: 456
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 70, y: 70, z: 70, w: 70}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3bb720382c4421040800000000000000
-      internalID: 4616828170220501939
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Gemini_Generated_Image_q85s96q85s96q85s (2)_8
-      rect:
-        serializedVersion: 2
-        x: 1261
-        y: 195
-        width: 830
-        height: 634
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 50, y: 50, z: 50, w: 50}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b23e90c648e9f0070800000000000000
-      internalID: 8074846948484047659
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Gemini_Generated_Image_q85s96q85s96q85s (2)_9
-      rect:
-        serializedVersion: 2
-        x: 1788
-        y: 1065
-        width: 260
-        height: 260
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 25, y: 40, z: 25, w: 25}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 299cfa57fe4dbb24d8b065b2d8215456
-      internalID: -106368815
+      spriteID: e75327aa940fe044c8c9ccd88efaaaa0
+      internalID: -1480416309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChatGPT Image 01_35_09 4 thg 7, 2026 (1)_2
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 293
+        width: 230
+        height: 204
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 25, y: 40, z: 25, w: 25}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: deae5aa37a704bf4591dcf60ee01cd32
+      internalID: -842071415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChatGPT Image 01_35_09 4 thg 7, 2026 (1)_3
+      rect:
+        serializedVersion: 2
+        x: 767
+        y: 293
+        width: 230
+        height: 204
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 25, y: 40, z: 25, w: 25}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a9221e66cbe5804db2bfa1dcb23495d
+      internalID: 1324257227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChatGPT Image 01_35_09 4 thg 7, 2026 (1)_4
+      rect:
+        serializedVersion: 2
+        x: 997
+        y: 293
+        width: 230
+        height: 204
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 25, y: 40, z: 25, w: 25}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3686f3d85bbdfb34b88f0309f7c8dd18
+      internalID: -1232858894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChatGPT Image 01_35_09 4 thg 7, 2026 (1)_5
+      rect:
+        serializedVersion: 2
+        x: 1227
+        y: 293
+        width: 226
+        height: 204
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 25, y: 40, z: 25, w: 25}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19e3a3b5fb693cf4ebd4e7e5e912c12f
+      internalID: -860280086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChatGPT Image 01_35_09 4 thg 7, 2026 (1)_6
+      rect:
+        serializedVersion: 2
+        x: 1454
+        y: 293
+        width: 219
+        height: 204
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 25, y: 40, z: 25, w: 25}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc35b7ce617e2e84cb6f51fe68f3cdee
+      internalID: -511738656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChatGPT Image 01_35_09 4 thg 7, 2026 (1)_7
+      rect:
+        serializedVersion: 2
+        x: 1674
+        y: 293
+        width: 214
+        height: 204
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 25, y: 40, z: 25, w: 25}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9fe5e25f5f781343844f93d4dfc8210
+      internalID: -227602224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChatGPT Image 01_35_09 4 thg 7, 2026 (1)_8
+      rect:
+        serializedVersion: 2
+        x: 1889
+        y: 293
+        width: 216
+        height: 204
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 25, y: 40, z: 25, w: 25}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1767ac6d982d2e2408dfdd1e3e4986af
+      internalID: -135225929
       vertices: []
       indices: 
       edges: []
@@ -347,7 +301,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 3b134dc4193788c4d95407f68c10a371
+    spriteID: 63ef0b72f3ec0dd429cb88d072410214
     internalID: 0
     vertices: []
     indices: 
@@ -357,16 +311,15 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Gemini_Generated_Image_q85s96q85s96q85s (2)_0: 1537966161198977013
-      Gemini_Generated_Image_q85s96q85s96q85s (2)_1: -1492381852225829458
-      Gemini_Generated_Image_q85s96q85s96q85s (2)_2: -1373980206729959460
-      Gemini_Generated_Image_q85s96q85s96q85s (2)_3: -4826698001664414988
-      Gemini_Generated_Image_q85s96q85s96q85s (2)_4: 7588432963727975711
-      Gemini_Generated_Image_q85s96q85s96q85s (2)_5: -7450720525193450341
-      Gemini_Generated_Image_q85s96q85s96q85s (2)_6: 7702789692272224788
-      Gemini_Generated_Image_q85s96q85s96q85s (2)_7: 4616828170220501939
-      Gemini_Generated_Image_q85s96q85s96q85s (2)_8: 8074846948484047659
-      Gemini_Generated_Image_q85s96q85s96q85s (2)_9: -106368815
+      ChatGPT Image 01_35_09 4 thg 7, 2026 (1)_0: -5793503643379915486
+      ChatGPT Image 01_35_09 4 thg 7, 2026 (1)_1: -1480416309
+      ChatGPT Image 01_35_09 4 thg 7, 2026 (1)_2: -842071415
+      ChatGPT Image 01_35_09 4 thg 7, 2026 (1)_3: 1324257227
+      ChatGPT Image 01_35_09 4 thg 7, 2026 (1)_4: -1232858894
+      ChatGPT Image 01_35_09 4 thg 7, 2026 (1)_5: -860280086
+      ChatGPT Image 01_35_09 4 thg 7, 2026 (1)_6: -511738656
+      ChatGPT Image 01_35_09 4 thg 7, 2026 (1)_7: -227602224
+      ChatGPT Image 01_35_09 4 thg 7, 2026 (1)_8: -135225929
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
