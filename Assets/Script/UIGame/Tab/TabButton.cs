@@ -6,6 +6,7 @@ using System.Collections;
 public class TabButton : MonoBehaviour
 {
     [SerializeField] private RectTransform target;
+    [SerializeField] private Image icon;
     [SerializeField] private TMP_Text text;
 
     [Header("Selected")]
@@ -26,15 +27,17 @@ public class TabButton : MonoBehaviour
     {
         MoveTo(defaultPos + Vector2.right * moveDistance);
 
+        icon.color = selectedColor;
 
         if (text != null)
-            text.color = selectedColor;
+            text.color = Color.yellow;
     }
 
     public void Deselect()
     {
         MoveTo(defaultPos);
 
+        icon.color = normalColor;
 
         if (text != null)
             text.color = normalColor;
