@@ -31,35 +31,10 @@ public class Lineup : MonoBehaviour
         myLineup.RemoveAll(p => p.position == position);
         GameManager.Instance.UpdateTeamPower();
     } 
-    // ================= NETWORK ================= 
-    public NetworkCharacterData[] GetNetworkLineup() 
-    { 
-        List<NetworkCharacterData> result = new List<NetworkCharacterData>(); 
-        foreach (var c in myLineup) 
-        { 
-            if (c.CharIndex < 0 || c.CharIndex >= CharacterInventoryManager.Instance.ownedCharacters.Count) 
-            { 
-                Debug.LogWarning("CharIndex out of range"); 
-                continue; 
-            } 
-            Character character = CharacterInventoryManager.Instance.ownedCharacters[c.CharIndex]; 
-            if (character == null || character.currentStats == null || character.currentStats.baseStats == null) 
-            { 
-                Debug.LogError("Character data NULL"); 
-                continue; 
-            } 
-            Debug.Log($"Lineup ID: {character.currentStats.baseStats.characterID}"); 
-            result.Add(new NetworkCharacterData 
-            { 
-                characterID = character.currentStats.baseStats.characterID, 
-                level = character.CurrentLevel, 
-                star = character.star, 
-                realm = (int)character.currentStats.baseStats.realm, 
-                position = (int)c.position
-            }); 
-        } 
-        return result.ToArray(); 
-    } 
+    public void RefreshUI()
+    {
+        lineupPanel.UpdateAllSlots();
+    }
 } 
 public enum Position { Front1, Front2, Front3, Back1, Back2, Back3 } 
 

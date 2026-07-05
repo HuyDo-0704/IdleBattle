@@ -5,6 +5,10 @@ public class TabGroup : MonoBehaviour
     [SerializeField] private TabButton[] buttons;
 
     private TabButton current;
+     void Start()
+    {
+        Select(buttons[0]);
+    }
 
     public void Select(TabButton button)
     {

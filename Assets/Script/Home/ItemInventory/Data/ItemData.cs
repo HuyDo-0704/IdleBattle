@@ -1,17 +1,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public enum ItemType
 {
-    Weapon,
-    Helmet,
-    Armor,
-    Gloves,
-    Boots,
-    Ring,
-    Necklace
+    Equipment,       // Trang bị
+    Consumable,      // Vật phẩm sử dụng
+    Material,        // Nguyên liệu
+    Chest,           // Rương
 }
-
 public enum ItemRare
 {
     All, // dùng cho item 1 ảnh 
@@ -23,31 +20,23 @@ public enum ItemRare
 }
 
 [CreateAssetMenu(menuName = "Idle RPG/Item Data")]
-public class ItemData : ScriptableObject
+public abstract class ItemData : ScriptableObject
 {
     [Header("Info")]
     public int itemID;
     public string itemName;
-    public List<IconItem> icon; // ảnh tùy theo rare
 
     [TextArea]
     public string description;
 
-    [Header("Type")]
     public ItemType itemType;
 
-    [Header("Base Stats")]
-    public int hp;
-    public int atk;
-    public int def;
-    public int speed;
-    public int critRate;
-    public int critDamage;
-    // hàm để tìm icon itemitem
+    public List<IconItem> icons;
+
     public Sprite GetSpriteIcon(ItemRare rare)
     {
-        return icon.Find(x => x.rare == rare)?.icon
-            ?? icon.Find(x => x.rare == ItemRare.All)?.icon;
+        return icons.Find(x => x.rare == rare)?.icon
+            ?? icons.Find(x => x.rare == ItemRare.All)?.icon;
     }
 }
 

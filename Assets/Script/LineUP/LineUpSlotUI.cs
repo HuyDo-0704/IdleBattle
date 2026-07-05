@@ -7,7 +7,7 @@ public class LineUpSlotUI : MonoBehaviour
     public Position position;
     public GameObject InfoObject;
     public InfoCharButton infoChar;
-    public void Start()
+    public void Awake()
     {
         InfoObject.SetActive(false);
         infoChar.characterImage.gameObject.SetActive(false);

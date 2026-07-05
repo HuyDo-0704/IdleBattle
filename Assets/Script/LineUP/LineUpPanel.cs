@@ -5,13 +5,20 @@ public class LineupPanel : MonoBehaviour
 {
     public List<LineUpSlotUI> slots = new List<LineUpSlotUI>();
     // thứ tự: Front1, Front2, Front3, Back1, Back2, Back3
-
+    public void Start()
+    {
+        Lineup.Instance.RefreshUI();
+    }
     public void UpdateAllSlots()
     {
         // Cập nhật tất cả slot dựa trên dữ liệu từ Lineup.Instance.myLineup
         // tìm slot.position = lineup.Instance.myLineup.position để lấy characterID
         // sau đó lấy character từ CharacterInventory.Instance.ownedCharacters[characterID]
         //nếu <0 thì ClearSlot, ngược lại thì UpdateCard(character)
+        foreach (var slot in slots)
+        {
+            slot.ClearSlot();
+        }
         foreach (var slot in slots)
         {
             Position pos = slot.position;

@@ -21,4 +21,8 @@ public class ItemDatabase
 
         return cache[id];
     }
+    public EquipmentData GetEquipmentData(int id)
+    {
+        return GetItem(id) as EquipmentData;
+    }
 }

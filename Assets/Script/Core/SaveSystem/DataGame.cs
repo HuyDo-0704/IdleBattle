@@ -13,8 +13,11 @@ public enum Realm
 public class DataGame : ScriptableObject
 {
     public TypeRealm[] typeRealms;
+    [Header("UI")]
     public InfoStar[] UIStar;
+    public ColorRareItem[] colorRares;
     public ItemDatabase itemDatabase;
+
     public CharacterBaseStats GetCharacter(string characterID, Realm realm)
     {
         return typeRealms?
@@ -37,6 +40,17 @@ public class DataGame : ScriptableObject
 
         return star.ImageStar;
     }
+    public Color GetColorByRarity(ItemRare rarity)
+    {
+        var colorRare = colorRares.FirstOrDefault(c => c.rarity == rarity);
+        if (colorRare == null)
+        {
+            Debug.LogWarning($"Color for rarity {rarity} not found.");
+            return Color.white; // Return a default color if not found
+        }
+        return colorRare.color;
+    }
+    
 }
 
 [System.Serializable]
@@ -58,5 +72,11 @@ public class InfoStar
 {
     public StarType starType;
     public Sprite ImageStar;
+}
+[System.Serializable]
+public class ColorRareItem
+{
+    public Color color;
+    public ItemRare rarity;
 }
 

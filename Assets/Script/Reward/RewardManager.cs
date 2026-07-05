@@ -7,7 +7,7 @@ public class RewardManager : MonoBehaviour
     private readonly Dictionary<ItemRare, float> dropRate =
     new Dictionary<ItemRare, float>()
     {
-        { ItemRare.Common, 65f },
+        { ItemRare.Common, 100f },
         { ItemRare.Rare, 25f },
         { ItemRare.Epic, 8f },
         { ItemRare.Legendary, 1.8f },
