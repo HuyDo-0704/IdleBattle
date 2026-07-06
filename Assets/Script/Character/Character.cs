@@ -3,8 +3,10 @@ using UnityEngine;
 [System.Serializable]
 public class Character
 {
-    public CurrentStats currentStats; // bảng chỉ số 
-    public float PowerStats;
+    public string uid;
+    public CharacterEquipment equipments;
+    public CurrentStats currentStats; // bảng chỉ số  
+    
     [Header("Progress")]
     public int CurrentLevel = 1;
     public int CurrentExp;
@@ -30,7 +32,7 @@ public class Character
         CurrentLevel++;
 
         // Cập nhật lại chỉ số
-        currentStats.InitializeStats(CurrentLevel);
+        currentStats.RecalculateStats(CurrentLevel);
 
         Debug.Log($"{currentStats.baseStats.characterName} Level Up -> {CurrentLevel}"); // về sau sẽ xóa 
     }

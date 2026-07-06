@@ -21,8 +21,8 @@ public class CharacterManager : MonoBehaviour
     {
         CChartacter = character;
         
-        Hud.maxHealth = CChartacter.currentStats.MHealth;
-        Hud.currentHealth = CChartacter.currentStats.MHealth;
+        Hud.maxHealth = CChartacter.currentStats.FinalStats.hp ;
+        Hud.currentHealth = CChartacter.currentStats.FinalStats.hp ;
         currentState = State.Combat;
     }
     public IEnumerator Acting()

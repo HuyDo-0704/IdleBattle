@@ -7,7 +7,6 @@ public class ItemInventoryPrefab : MonoBehaviour
     [Header("UI")]
     [SerializeField] private Image icon;
     [SerializeField] private Image rarityFrame;
-    [SerializeField] private TMP_Text levelText;
     [SerializeField] private GameObject equippedIcon;
     private Button button;
 
@@ -29,7 +28,6 @@ public class ItemInventoryPrefab : MonoBehaviour
         rarityFrame.color =
             DataManager.Instance.DataGame.GetColorByRarity(item.itemRare);
 
-        levelText.text = $"Lv.{item.level}";
 
         equippedIcon.SetActive(item.isEquipped);
 

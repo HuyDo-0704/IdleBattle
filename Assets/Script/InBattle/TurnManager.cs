@@ -45,13 +45,13 @@ public class TurnManager : MonoBehaviour
         }
 
         aliveCharacters.Sort(
-            (a, b) => b.CChartacter.currentStats.CSpeed.CompareTo(a.CChartacter.currentStats.CSpeed));
+            (a, b) => b.CChartacter.currentStats.FinalStats.speed.CompareTo(a.CChartacter.currentStats.FinalStats.speed));
 
         Debug.Log($"Round {CurrentRound} - Alive : {aliveCharacters.Count}");
 
         foreach (CharacterManager character in aliveCharacters)
         {
-            Debug.Log($"Queue Add : {character.name} SPD:{character.CChartacter.currentStats.CSpeed}");
+            Debug.Log($"Queue Add : {character.name} SPD:{character.CChartacter.currentStats.FinalStats.speed}");
 
             turnQueue.Enqueue(character);
         }

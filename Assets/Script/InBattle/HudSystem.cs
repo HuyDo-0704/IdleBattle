@@ -42,18 +42,19 @@ public class HudSystem : MonoBehaviour
 
     private void Start()
     {
+        if (typeTeam == TypeTeam.None)
+            return;
         if (owner == null)
             owner = GetComponentInParent<CharacterManager>();
-
         if (owner != null)
         {
-            if (owner.CChartacter.currentStats.MHealth <= 0)
-                owner.CChartacter.currentStats.InitializeStats(owner.CChartacter.CurrentLevel);
+            if (owner.CChartacter.currentStats.FinalStats.hp <= 0 )
+                owner.CChartacter.currentStats.RecalculateStats(owner.CChartacter.CurrentLevel);
 
-            maxHealth = owner.CChartacter.currentStats.MHealth;
+            maxHealth = owner.CChartacter.currentStats.FinalStats.hp;
 
             currentHealth = maxHealth;
-            currentMana = 0 + owner.CChartacter.currentStats.ManaBonus;
+            currentMana = 0 + owner.CChartacter.currentStats.FinalStats.manaBonus;
         }
 
         anim = GetComponent<Animator>();

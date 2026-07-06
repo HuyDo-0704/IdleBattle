@@ -3,25 +3,21 @@ using System;
 [Serializable]
 public class EquipmentItem : Item
 {
-    // Loại trang bị
-    public EquipmentType equipmentType;
-
-    // Chỉ số cộng thêm ngẫu nhiên
-    public int attack;
-    public int defense;
-    public int hp;
-
-    // Chỉ số phụ (Random Stat)
-    public int critRate;
-    public int critDamage;
-    public int attackSpeed;
-
-    // Độ bền (nếu sau này cần)
-    public int durability;
-
+    public EquipmentData Data;
+    public int Level = 0;
+    public Stats EquipmentStats = new();
     // Nhân vật đang trang bị
     public string equippedCharacterUID;
 
+    public void InitializeStats(int Level)
+    {
+        EquipmentStats.hp = Data.GetHealthByLevel(Level);
+        EquipmentStats.atk = Data.GetAttackByLevel(Level);
+        EquipmentStats.def = Data.GetDefenseByLevel(Level);
+        EquipmentStats.speed = Data.speed ;
+        EquipmentStats.critRate = Data.critRate ;
+        EquipmentStats.critDamage = Data.critDamage;
+    }
     public EquipmentItem() : base()
     {
 

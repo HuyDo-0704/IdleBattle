@@ -4,29 +4,20 @@ using UnityEngine;
 public class CurrentStats
 {
     public CharacterBaseStats baseStats;
-    [Header("Current Stats")]
-
-    public float CSpeed;
-    public float CAttack;
-    public float CDef;
-    public float MHealth;
-    public float ManaBonus;
-
-    public float CCriticalRate;
-    public float CCriticalDamage;
-
+    public Stats equipmentStats;
+    public Stats FinalStats;
     [Header("Progression")]
     public float PowerStats;
 
-    public void InitializeStats(int CurrentLevel)
+    public void RecalculateStats(int CurrentLevel)
     {
-        MHealth = baseStats.GetHealthByLevel(CurrentLevel);
-        CAttack = baseStats.GetAttackByLevel(CurrentLevel);
-        CDef = baseStats.GetDefenseByLevel(CurrentLevel);
-        ManaBonus = baseStats.GetManaBonusByLevel(CurrentLevel);
-        CSpeed = baseStats.Speed;
-        CCriticalRate = baseStats.CriticalRate;
-        CCriticalDamage = baseStats.CriticalDamage;
+        FinalStats.hp = baseStats.GetHealthByLevel(CurrentLevel) + equipmentStats.hp ;
+        FinalStats.atk = baseStats.GetAttackByLevel(CurrentLevel) + equipmentStats.atk;
+        FinalStats.def = baseStats.GetDefenseByLevel(CurrentLevel) + equipmentStats.def;
+        FinalStats.manaBonus = baseStats.GetManaBonusByLevel(CurrentLevel) + equipmentStats.manaBonus;
+        FinalStats.speed = baseStats.Speed + equipmentStats.speed;
+        FinalStats.critRate = baseStats.CriticalRate + equipmentStats.critRate;
+        FinalStats.critDamage = baseStats.CriticalDamage + equipmentStats.critDamage;
 
         UpdatePower();
     }
@@ -35,11 +26,11 @@ public class CurrentStats
     public void UpdatePower()
     {
         PowerStats =
-            CAttack * 1.2f +
-            CDef * 1f +
-            MHealth * 0.1f +
-            CSpeed * 2f +
-            CCriticalRate * 15f +
-            CCriticalDamage * 8f;
+            FinalStats.atk * 1.2f +
+            FinalStats.def * 1f +
+            FinalStats.hp * 0.1f +
+            FinalStats.speed * 2f +
+            FinalStats.critRate * 15f +
+            FinalStats.critDamage * 8f;
     }
 }

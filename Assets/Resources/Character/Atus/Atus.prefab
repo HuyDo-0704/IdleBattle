@@ -790,17 +790,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Hud: {fileID: 8697237809581741556}
-  Stats:
-    baseStats: {fileID: 11400000, guid: 74ea457f94ebad0438a2eacec2d18a05, type: 2}
-    CSpeed: 0
-    CAttack: 0
-    CDef: 0
-    MHealth: 0
-    MMana: 0
-    CCriticalRate: 0
-    CCriticalDamage: 0
+  CChartacter:
+    currentStats:
+      baseStats: {fileID: 0}
+      CSpeed: 0
+      CAttack: 0
+      CDef: 0
+      MHealth: 0
+      ManaBonus: 0
+      CCriticalRate: 0
+      CCriticalDamage: 0
+      PowerStats: 0
     PowerStats: 0
     CurrentLevel: 1
+    CurrentExp: 0
+    star: 0
+    isLineup: 0
   currentState: 0
 --- !u!1 &1602770969465100272
 GameObject:
@@ -3397,7 +3402,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: c5a65547d1edf4a9d882bd6cff83eda8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4880,9 +4885,10 @@ MonoBehaviour:
   owner: {fileID: 0}
   typeTeam: 0
   maxHealth: 0
-  maxMana: 0
   currentHealth: 0
   currentMana: 0
+  shakeDuration: 0.15
+  shakeAmount: 0.05
 --- !u!70 &6637808722936301918
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

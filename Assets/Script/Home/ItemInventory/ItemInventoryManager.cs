@@ -41,8 +41,12 @@ public class ItemInventoryManager : MonoBehaviour
         switch (data)
         {
             case EquipmentData equipmentData:
-                item = new EquipmentItem();
-                ((EquipmentItem)item).equipmentType = equipmentData.equipmentType;
+
+                EquipmentItem equipment = new EquipmentItem();
+                equipment.Data = equipmentData;
+
+                item = equipment;
+
                 break;
 
             case ConsumableData:
@@ -148,7 +152,7 @@ public class ItemInventoryManager : MonoBehaviour
             case EquipmentData equipmentData:
                 return new EquipmentItem()
                 {
-                    equipmentType = equipmentData.equipmentType
+                    Data = equipmentData
                 };
 
             case ConsumableData:

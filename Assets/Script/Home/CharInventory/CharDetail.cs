@@ -8,7 +8,8 @@ public class CharDetail : MonoBehaviour
     [SerializeField] Text charName;
     [SerializeField] Image RarityFrame;
     [SerializeField] GameObject CharStand;
-    [SerializeField] StatsIndex statsIndex;
+    [SerializeField] GameObject Star;
+    public StatsIndex statsIndex;
     private Animator animator;
     int currentCharID;
     void Start()
@@ -29,6 +30,8 @@ public class CharDetail : MonoBehaviour
         charName.text = character.currentStats.baseStats.characterName;
         //RarityFrame.sprite = charBase.rarityFrame;
         statsIndex.UpdateStats(character);
+        GetSpriteStar(character);
+        EquipmentManager.Instance.UI.Show(character);
         // Xóa CharStand cũ nếu có
         foreach (Transform child in CharStand.transform)
         {
@@ -74,5 +77,49 @@ public class CharDetail : MonoBehaviour
 
         Character prevChar = CharacterInventoryManager.Instance.ownedCharacters[index];
         UpdateInfo(prevChar, prevCharID);
+    }
+    public void GetSpriteStar(Character character)
+    {
+        int star = character.star;
+
+        Sprite emptyStar = DataManager.Instance.DataGame.GetSpriteStar(StarType.Empty);
+        Sprite yellowStar = DataManager.Instance.DataGame.GetSpriteStar(StarType.Yellow);
+        Sprite redStar = DataManager.Instance.DataGame.GetSpriteStar(StarType.Red);
+        Sprite diamondStar = DataManager.Instance.DataGame.GetSpriteStar(StarType.Diamond);
+
+        Image[] starImages = Star.GetComponentsInChildren<Image>();
+
+        // reset
+        for (int i = 0; i < starImages.Length; i++)
+        {
+            starImages[i].sprite = emptyStar;
+        }
+
+        // logic
+        if (star <= 5)
+        {
+            for (int i = 0; i < star; i++)
+            {
+                starImages[i].sprite = yellowStar;
+            }
+        }
+        else if (star <= 10)
+        {
+            int redCount = star - 5;
+
+            for (int i = 0; i < redCount; i++)
+            {
+                starImages[i].sprite = redStar;
+            }
+        }
+        else
+        {
+            int diamondCount = star - 10;
+
+            for (int i = 0; i < diamondCount && i < starImages.Length; i++)
+            {
+                starImages[i].sprite = diamondStar;
+            }
+        }
     }
 }
