@@ -12,21 +12,17 @@ public enum Realm
 [CreateAssetMenu(fileName = "DataGame", menuName = "Game/DataGame")]
 public class DataGame : ScriptableObject
 {
-    public TypeRealm[] typeRealms;
+    public CharacterBaseStats[] characterBaseStats;
     [Header("UI")]
     public InfoStar[] UIStar;
     public ColorRareItem[] colorRares;
     public ItemDatabase itemDatabase;
 
-    public CharacterBaseStats GetCharacter(string characterID, Realm realm)
+    public CharacterBaseStats GetCharacter(string characterID)
     {
-        return typeRealms?
-            .Where(t => t != null && t.realm == realm)
-            .SelectMany(t => t.characterBaseStats)
-            .FirstOrDefault(c =>
-                c != null &&
-                c.characterID.Equals(characterID, System.StringComparison.OrdinalIgnoreCase)
-            );
+        return characterBaseStats.FirstOrDefault(c =>
+            c != null &&
+            c.characterID.Equals(characterID, StringComparison.OrdinalIgnoreCase));
     }
     public Sprite GetSpriteStar(StarType type)
     {
@@ -53,13 +49,6 @@ public class DataGame : ScriptableObject
     
 }
 
-[System.Serializable]
-public class TypeRealm
-{
-    public Realm realm;
-    public CharacterBaseStats[] characterBaseStats;
-
-}
 public enum StarType
 {
     Empty,

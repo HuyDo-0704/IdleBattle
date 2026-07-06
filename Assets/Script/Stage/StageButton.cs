@@ -26,8 +26,7 @@ public class StageButton : MonoBehaviour
                 ? StarType.Yellow
                 : StarType.Empty;
 
-            starImages[i].sprite =
-                DataManager.Instance.DataGame.GetSpriteStar(type);
+            starImages[i].sprite = DataManager.Instance.DataGame.GetSpriteStar(type);
         }
     }
 

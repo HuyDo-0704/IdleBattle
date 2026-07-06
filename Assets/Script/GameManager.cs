@@ -61,6 +61,38 @@ public class GameManager : MonoBehaviour
         HomePanel.SetActive(panel == PanelType.Home);
         BattlePanel.SetActive(panel == PanelType.Battle);
     }
+    public Character CreateCharacter(string characterID, int level = 1, int star = 1, string uid = null, bool isLineup = false, CharacterEquipment equipments = null)
+    {
+        CharacterBaseStats baseStats =
+            DataManager.Instance.DataGame.GetCharacter(characterID);
+
+        if (baseStats == null)
+        {
+            Debug.LogError($"Character ID '{characterID}' not found!");
+            return null;
+        }
+
+        Character character = new Character();
+
+        character.uid = string.IsNullOrEmpty(uid)
+            ? System.Guid.NewGuid().ToString()
+            : uid;
+
+        character.CurrentLevel = level;
+        character.star = star;
+        character.isLineup = isLineup;
+
+        character.currentStats = new CurrentStats();
+        character.currentStats.baseStats = baseStats;
+        character.currentStats.equipmentStats = new Stats();
+        character.currentStats.FinalStats = new Stats();
+
+        character.equipments = equipments ?? new CharacterEquipment();
+
+        character.currentStats.RecalculateStats(level);
+
+        return character;
+    }
 }
 
 
