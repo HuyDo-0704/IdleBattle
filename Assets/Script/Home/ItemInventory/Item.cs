@@ -11,7 +11,6 @@ public class Item
     // Runtime
     public int level;
     public int star;
-    public ItemRare itemRare;
     public bool isLock;
     public bool isEquipped;
 

@@ -28,9 +28,7 @@ public class RewardManager : MonoBehaviour
             if (Random.Range(0f, 100f) > chance)
                 continue;
 
-            ItemInventoryManager.Instance.AddItem(
-                reward.itemData,
-                reward.itemRare);
+            ItemInventoryManager.Instance.AddItem(reward.itemData);
 
             rewards.Add(reward);
 

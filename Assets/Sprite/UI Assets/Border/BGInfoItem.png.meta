@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 13b76f0921e80844e9e42fa85542b866
+guid: 80ec796114748cc40a475b0244bc88c9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8315297581468283718
-    second: BGItem_0
+      213: 7777758344662182030
+    second: BGInfoItem_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,23 +100,45 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BGItem_0
+      name: BGInfoItem_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 150
-        height: 150
+        width: 96
+        height: 140
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 5, y: 5, z: 5, w: 5}
+      border: {x: 6, y: 6, z: 6, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 643f411181fd56370800000000000000
-      internalID: 8315297581468283718
+      spriteID: e886b62910620fb60800000000000000
+      internalID: 7777758344662182030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BGInfoItem_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 140
+        width: 96
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 6, y: 6, z: 6, w: 6}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad1e19af939eef443817008f4b01652a
+      internalID: -1842286200
       vertices: []
       indices: 
       edges: []
@@ -125,7 +147,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 3b1fecc5bc516684c8570e1ec0029535
+    spriteID: 6808a4f74858c464589eda8fffebfeed
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +157,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      BGItem_0: 8315297581468283718
+      BGInfoItem_0: 7777758344662182030
+      BGInfoItem_1: -1842286200
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

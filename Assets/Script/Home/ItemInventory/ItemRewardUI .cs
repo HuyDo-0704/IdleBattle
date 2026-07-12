@@ -11,7 +11,7 @@ public class ItemRewardUI  : MonoBehaviour
     public void Setup(ItemData itemData, ItemRare rare)
     {
 
-        icon.sprite = itemData.GetSpriteIcon(rare);
+        icon.sprite = itemData.icons;
         rareimage.color = DataManager.Instance.DataGame.GetColorByRarity(rare);
     }
     // lấy màu dựa theo rarity

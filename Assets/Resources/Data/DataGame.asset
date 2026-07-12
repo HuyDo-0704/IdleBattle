@@ -29,7 +29,7 @@ MonoBehaviour:
   colorRares:
   - color: {r: 0.29803923, g: 0.6862745, b: 0.3137255, a: 1}
     rarity: 1
-  - color: {r: 0.24705882, g: 0.654902, b: 1, a: 0}
+  - color: {r: 0.24705882, g: 0.654902, b: 1, a: 1}
     rarity: 2
   - color: {r: 0.69411767, g: 0.36078432, b: 1, a: 1}
     rarity: 3
@@ -38,5 +38,8 @@ MonoBehaviour:
   - color: {r: 1, g: 0.09019608, b: 0.26666668, a: 1}
     rarity: 5
   itemDatabase:
-    items:
+    Equipment:
     - {fileID: 11400000, guid: 9338381a097ea244dbe79ae036ce6978, type: 2}
+    - {fileID: 11400000, guid: 6ddff9c2485560c499c88cd07d916cbf, type: 2}
+    - {fileID: 11400000, guid: 76d620b78c6e40e46b6e73c40f1d0a19, type: 2}
+    Consumable: []

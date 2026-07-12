@@ -4,7 +4,7 @@ using System;
 public class EquipmentItem : Item
 {
     public EquipmentData Data;
-    public int Level = 0;
+
     public Stats EquipmentStats = new();
     // Nhân vật đang trang bị
     public string equippedCharacterUID;

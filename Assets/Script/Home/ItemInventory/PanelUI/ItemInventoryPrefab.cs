@@ -23,10 +23,10 @@ public class ItemInventoryPrefab : MonoBehaviour
 
         itemData = DataManager.Instance.DataGame.itemDatabase.GetItem(item.itemID);
 
-        icon.sprite = itemData.GetSpriteIcon(item.itemRare);
+        icon.sprite = itemData.icons;
 
         rarityFrame.color =
-            DataManager.Instance.DataGame.GetColorByRarity(item.itemRare);
+            DataManager.Instance.DataGame.GetColorByRarity(itemData.defaultRare);
 
 
         equippedIcon.SetActive(item.isEquipped);

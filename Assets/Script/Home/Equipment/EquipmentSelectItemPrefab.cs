@@ -13,8 +13,8 @@ public class EquipmentSelectItemPrefab : MonoBehaviour
     {
         this.character = character;
         this.item = equipment;
-        rarity.color = DataManager.Instance.DataGame.GetColorByRarity(item.itemRare);
-        icon.sprite = equipment.Data.GetSpriteIcon(item.itemRare);
+        rarity.color = DataManager.Instance.DataGame.GetColorByRarity(item.Data.defaultRare);
+        icon.sprite = equipment.Data.icons;
         if( equipment.isEquipped == true)
         {
             equippedIcon.SetActive(true);

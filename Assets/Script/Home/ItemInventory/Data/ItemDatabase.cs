@@ -1,28 +1,60 @@
-using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine;
 
 [System.Serializable]
-// tích hợp vào bên ScriptableObject DataGame để dễ quản lý
 public class ItemDatabase
 {
-    public List<ItemData> items;
+    [Header("All Equipment")]
+    public List<EquipmentData> Equipment;
 
-    private Dictionary<int, ItemData> cache;
+    [Header("Other Items (Material, Consumable,...)")]
+    public List<ConsumableData> Consumable;
+
+    private Dictionary<int, EquipmentData> equipmentCache;
+    private Dictionary<int, ItemData> itemCache;
+
+    private void BuildCache()
+    {
+        if (equipmentCache == null)
+        {
+            equipmentCache = new Dictionary<int, EquipmentData>();
+
+            foreach (var equipment in Equipment)
+            {
+                if (equipment != null)
+                    equipmentCache[equipment.itemID] = equipment;
+            }
+        }
+
+        if (itemCache == null)
+        {
+            itemCache = new Dictionary<int, ItemData>();
+
+            foreach (var item in Consumable)
+            {
+                if (item != null)
+                    itemCache[item.itemID] = item;
+            }
+        }
+    }
+
+    public EquipmentData GetEquipmentData(int id)
+    {
+        BuildCache();
+
+        equipmentCache.TryGetValue(id, out EquipmentData equipment);
+        return equipment;
+    }
 
     public ItemData GetItem(int id)
     {
-        if (cache == null)
-        {
-            cache = new Dictionary<int, ItemData>();
+        BuildCache();
 
-            foreach (var item in items)
-                cache[item.itemID] = item;
-        }
+        // Ưu tiên tìm Equipment trước
+        if (equipmentCache.TryGetValue(id, out EquipmentData equipment))
+            return equipment;
 
-        return cache[id];
-    }
-    public EquipmentData GetEquipmentData(int id)
-    {
-        return GetItem(id) as EquipmentData;
+        itemCache.TryGetValue(id, out ItemData item);
+        return item;
     }
 }

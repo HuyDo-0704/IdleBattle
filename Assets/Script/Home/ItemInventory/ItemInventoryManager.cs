@@ -34,7 +34,7 @@ public class ItemInventoryManager : MonoBehaviour
     {
         LoadInventory();
     }
-    public void AddItem(ItemData data, ItemRare rare)
+    public void AddItem(ItemData data)
     {
         Item item = null;
 
@@ -69,7 +69,6 @@ public class ItemInventoryManager : MonoBehaviour
         item.itemID = data.itemID;
         item.level = 1;
         item.star = 1;
-        item.itemRare = rare;
 
         ownedItems.Add(item);
 
@@ -129,7 +128,6 @@ public class ItemInventoryManager : MonoBehaviour
 
             Debug.Log(DataManager.Instance?.DataGame?.itemDatabase);
 
-            Debug.Log(DataManager.Instance?.DataGame?.itemDatabase?.items);
             ItemData data = DataManager.Instance.DataGame.itemDatabase.GetItem(item.itemID);
 
             Item runtimeItem = CreateRuntimeItem(data);
@@ -138,7 +136,6 @@ public class ItemInventoryManager : MonoBehaviour
             runtimeItem.itemID = item.itemID;
             runtimeItem.level = item.level;
             runtimeItem.star = item.star;
-            runtimeItem.itemRare = item.itemRare;
             runtimeItem.isLock = item.isLock;
             runtimeItem.isEquipped = item.isEquipped;
 

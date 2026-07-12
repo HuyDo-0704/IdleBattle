@@ -7,10 +7,12 @@ public class ItemInfoUI : MonoBehaviour
     public static ItemInfoUI Instance;
     [Header("Icon")]
     [SerializeField] private Image icon;
-    [SerializeField] private Image rarityFrame;
+    [SerializeField] private Image rarityBG;
+    
 
     [Header("Info")]
     [SerializeField] private TMP_Text itemName;
+    [SerializeField] private TMP_Text rarityText;
     [SerializeField] private TMP_Text levelText;
     [SerializeField] private TMP_Text typeText;
     [SerializeField] private TMP_Text descriptionText;
@@ -60,7 +62,7 @@ public class ItemInfoUI : MonoBehaviour
         currentItem = item;
 
         EquipmentData data = DataManager.Instance.DataGame.itemDatabase.GetEquipmentData(item.itemID);
-
+        Color color = DataManager.Instance.DataGame.GetColorByRarity(data.defaultRare);
         if (data == null)
         {
             Debug.LogError($"EquipmentData ID {item.itemID} not found.");
@@ -71,20 +73,20 @@ public class ItemInfoUI : MonoBehaviour
         // Icon
         //-------------------------
 
-        icon.sprite = data.GetSpriteIcon(item.itemRare);
+        icon.sprite = data.icons;
 
-        rarityFrame.color =
-            DataManager.Instance.DataGame.GetColorByRarity(item.itemRare);
+        rarityBG.color = color;
 
         //-------------------------
         // Info
         //-------------------------
 
         itemName.text = data.itemName;
+        itemName.color = color;
 
-
-        levelText.text = $"Lv.{item.level}";
-
+        levelText.text = $"Requires Lv.{item.level}";
+        rarityText.text= $"{data.defaultRare} Grade";
+        rarityText.color = color;
         typeText.text = data.equipmentType.ToString();
 
         descriptionText.text = data.description;

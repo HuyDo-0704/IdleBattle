@@ -22,7 +22,7 @@ public class EquipmentSlotUI : MonoBehaviour
         else
         {
             EmtyUI.SetActive(true);
-            icon.sprite = item.Data.GetSpriteIcon(item.itemRare);
+            icon.sprite = item.Data.icons;
         }
     }
 

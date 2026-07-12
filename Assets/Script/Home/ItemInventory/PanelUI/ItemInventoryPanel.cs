@@ -23,8 +23,7 @@ public class ItemInventoryPanel : MonoBehaviour
 
         foreach (Item item in ItemInventoryManager.Instance.ownedItems)
         {
-            ItemInventoryPrefab ui =
-                Instantiate(prefab, content);
+            ItemInventoryPrefab ui = Instantiate(prefab, content);
 
             ui.Setup(item);
 

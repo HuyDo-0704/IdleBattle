@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Microsoft.Unity.VisualStudio.Editor;
 using UnityEngine;
 
 
@@ -30,19 +31,7 @@ public abstract class ItemData : ScriptableObject
     public string description;
 
     public ItemType itemType;
+    public ItemRare defaultRare;
+    public Sprite icons;
 
-    public List<IconItem> icons;
-
-    public Sprite GetSpriteIcon(ItemRare rare)
-    {
-        return icons.Find(x => x.rare == rare)?.icon
-            ?? icons.Find(x => x.rare == ItemRare.All)?.icon;
-    }
-}
-
-[System.Serializable]
-public class IconItem
-{
-    public Sprite icon;
-    public ItemRare rare;
 }

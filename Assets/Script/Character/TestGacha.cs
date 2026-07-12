@@ -7,7 +7,7 @@ public class TestGacha : MonoBehaviour
     {
 
         Character character =
-            GameManager.Instance.CreateCharacter(characterBaseStats.characterID);
+            GameManager.Instance.CreateCharacter(characterBaseStats.characterID, 50);
 
         CharacterInventoryManager.Instance.AddCharacter(character);
     }

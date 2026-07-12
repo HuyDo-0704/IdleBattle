@@ -10,23 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 314753c2affce9c4483181b879540971, type: 3}
-  m_Name: LongSword
+  m_Name: serrated sword
   m_EditorClassIdentifier: Assembly-CSharp::EquipmentData
-  itemID: 0
-  itemName: Long Sword
+  itemID: 1
+  itemName: serrated sword
   description: 
   itemType: 0
-  icons:
-  - icon: {fileID: 21300000, guid: c3cc6ff0fd7c41c4a905b632cd6000a3, type: 3}
-    rare: 1
-  - icon: {fileID: 21300000, guid: 2cdf7a4609f2ace4e98a6f2c4bf014f2, type: 3}
-    rare: 2
-  - icon: {fileID: 21300000, guid: d3e2a5e5bd31aa74898670e854967849, type: 3}
-    rare: 3
-  - icon: {fileID: 21300000, guid: f656b5e16880ee24796ef88735e3b3e8, type: 3}
-    rare: 4
-  - icon: {fileID: 21300000, guid: 0bad22f20e99e94458580e5494577129, type: 3}
-    rare: 5
+  defaultRare: 2
+  icons: {fileID: 21300000, guid: 1b2ea8d4c3c05a74d832a665e5496d6e, type: 3}
   equipmentType: 0
   hp: 0
   atk: 30
@@ -34,3 +25,7 @@ MonoBehaviour:
   speed: 0
   critRate: 0
   critDamage: 0
+  healthPerLevel: 10
+  manaPerLevel: 5
+  attackPerLevel: 2
+  defensePerLevel: 1
