@@ -39,7 +39,14 @@ MonoBehaviour:
     rarity: 5
   itemDatabase:
     Equipment:
-    - {fileID: 11400000, guid: 9338381a097ea244dbe79ae036ce6978, type: 2}
-    - {fileID: 11400000, guid: 6ddff9c2485560c499c88cd07d916cbf, type: 2}
+    - {fileID: 11400000, guid: c798f568c5afa0d43bf7813aebab7455, type: 2}
+    - {fileID: 11400000, guid: 98ca0d4cbf61d3444a4fd626feb56f09, type: 2}
+    - {fileID: 11400000, guid: d46f9b78b3e906f4d8ac18f3c4017495, type: 2}
+    - {fileID: 11400000, guid: 98076cdfa6e875544b19f60435c42759, type: 2}
+    - {fileID: 11400000, guid: 606d7390c606b064fa2bb889509b68ca, type: 2}
     - {fileID: 11400000, guid: 76d620b78c6e40e46b6e73c40f1d0a19, type: 2}
+    - {fileID: 11400000, guid: 6ddff9c2485560c499c88cd07d916cbf, type: 2}
+    - {fileID: 11400000, guid: 10a026d25b2263949b2a985500acd11d, type: 2}
+    - {fileID: 11400000, guid: 416a200af59cf5a4e84c437f5e12819a, type: 2}
+    - {fileID: 11400000, guid: dfcea31f2dfc71540854c47ae3721ef3, type: 2}
     Consumable: []

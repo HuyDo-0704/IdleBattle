@@ -13,7 +13,28 @@ public class ItemInventoryManager : MonoBehaviour
     private string SavePath =>
         Path.Combine(Application.persistentDataPath,
         "ItemInventory.json");
+    [SerializeField] private bool addAllEquipmentForTest = false;
 
+    private void Start()
+    {
+        LoadInventory();
+
+        if (addAllEquipmentForTest)
+        {
+            AddAllEquipmentForTest();
+        }
+    }
+
+    [ContextMenu("Add All Equipment For Test")]
+    private void AddAllEquipmentForTest()
+    {
+        foreach (EquipmentData equipment in DataManager.Instance.DataGame.itemDatabase.Equipment)
+        {
+            AddItem(equipment);
+        }
+
+        Debug.Log($"Added {DataManager.Instance.DataGame.itemDatabase.Equipment.Count} equipment(s) for testing.");
+    }
     private void Awake()
     {
         if (Instance != null)
@@ -30,10 +51,6 @@ public class ItemInventoryManager : MonoBehaviour
     //========================
     // ADD
     //========================
-    public void Start ()
-    {
-        LoadInventory();
-    }
     public void AddItem(ItemData data)
     {
         Item item = null;

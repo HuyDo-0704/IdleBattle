@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 314753c2affce9c4483181b879540971, type: 3}
+  m_Name: (14)Beast Boots
+  m_EditorClassIdentifier: Assembly-CSharp::EquipmentData
+  itemID: 13
+  itemName: Beast Claws
+  description: 
+  itemType: 0
+  defaultRare: 3
+  icons: {fileID: -7407372904322396091, guid: 34360977087f0bd4e966b3018f0a59f0, type: 3}
+  equipmentType: 4
+  hp: 0
+  atk: 0
+  def: 15
+  speed: 6
+  critRate: 0
+  critDamage: 0
+  healthPerLevel: 0
+  manaPerLevel: 0
+  attackPerLevel: 0
+  defensePerLevel: 5
