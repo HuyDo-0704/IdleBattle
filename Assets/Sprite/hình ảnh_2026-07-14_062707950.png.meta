@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 88bc89a5087a8de449bb4216f32c2acf
+guid: 89d0e599c23bea5469c6f67bacfcf492
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7956966747060407788
-    second: Ui Level Baget_0
+      213: 1772286999578557316
+    second: "h\xECnh \u1EA3nh_2026-07-14_062707950_0"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Ui Level Baget_0
+      name: "h\xECnh \u1EA3nh_2026-07-14_062707950_0"
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 128
-        height: 128
+        x: 3
+        y: 6
+        width: 551
+        height: 516
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4127edfb6ec239190800000000000000
-      internalID: -7956966747060407788
+      spriteID: 48b3ce9d2ad689810800000000000000
+      internalID: 1772286999578557316
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Ui Level Baget_0: -7956966747060407788
+      "h\xECnh \u1EA3nh_2026-07-14_062707950_0": 1772286999578557316
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

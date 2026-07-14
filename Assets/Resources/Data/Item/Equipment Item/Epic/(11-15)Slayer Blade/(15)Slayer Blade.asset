@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 314753c2affce9c4483181b879540971, type: 3}
   m_Name: (15)Slayer Blade
   m_EditorClassIdentifier: Assembly-CSharp::EquipmentData
-  itemID: 13
+  itemID: 15
   itemName: Slayer Blade
   description: 
   itemType: 0

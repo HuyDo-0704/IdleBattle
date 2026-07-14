@@ -1441,15 +1441,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthFill: {fileID: 6053808790648581951}
   manaFill: {fileID: 7024982258797547817}
+  Level: {fileID: 0}
+  nameChar: {fileID: 0}
   HUDBar: {fileID: 0}
   friendlyColor: {r: 0, g: 1, b: 0, a: 1}
   enemyColor: {r: 1, g: 0, b: 0, a: 1}
   owner: {fileID: 0}
   typeTeam: 0
   maxHealth: 0
-  maxMana: 0
   currentHealth: 0
   currentMana: 0
+  shakeDuration: 0.15
+  shakeAmount: 0.05
 --- !u!1 &3154089017956223287
 GameObject:
   m_ObjectHideFlags: 0
@@ -2115,17 +2118,152 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Hud: {fileID: 5652558339937675341}
-  Stats:
-    baseStats: {fileID: 11400000, guid: 2870f6b056d523d48b2c5cc154200bdb, type: 2}
-    CSpeed: 0
-    CAttack: 0
-    CDef: 0
-    MHealth: 0
-    MMana: 0
-    CCriticalRate: 0
-    CCriticalDamage: 0
-    PowerStats: 0
+  CChartacter:
+    uid: 
+    equipments:
+      weapon:
+        uid: 63208206-aed6-427c-80a2-3c3a1beb4a87
+        itemID: 0
+        level: 0
+        star: 0
+        isLock: 0
+        isEquipped: 0
+        Data: {fileID: 0}
+        EquipmentStats:
+          hp: 0
+          atk: 0
+          def: 0
+          speed: 0
+          critRate: 0
+          critDamage: 0
+          manaBonus: 0
+        equippedCharacterUID: 
+      helmet:
+        uid: 5f4a7e27-3ef5-44e5-baf9-b9dfbf140683
+        itemID: 0
+        level: 0
+        star: 0
+        isLock: 0
+        isEquipped: 0
+        Data: {fileID: 0}
+        EquipmentStats:
+          hp: 0
+          atk: 0
+          def: 0
+          speed: 0
+          critRate: 0
+          critDamage: 0
+          manaBonus: 0
+        equippedCharacterUID: 
+      armor:
+        uid: 5cdd737c-7e04-405d-9653-d77466e894f9
+        itemID: 0
+        level: 0
+        star: 0
+        isLock: 0
+        isEquipped: 0
+        Data: {fileID: 0}
+        EquipmentStats:
+          hp: 0
+          atk: 0
+          def: 0
+          speed: 0
+          critRate: 0
+          critDamage: 0
+          manaBonus: 0
+        equippedCharacterUID: 
+      gloves:
+        uid: afd94a83-4c97-40b5-a36a-debfc0f7aebf
+        itemID: 0
+        level: 0
+        star: 0
+        isLock: 0
+        isEquipped: 0
+        Data: {fileID: 0}
+        EquipmentStats:
+          hp: 0
+          atk: 0
+          def: 0
+          speed: 0
+          critRate: 0
+          critDamage: 0
+          manaBonus: 0
+        equippedCharacterUID: 
+      shoes:
+        uid: 94ed8684-ac58-4767-a8de-d77229ea70c0
+        itemID: 0
+        level: 0
+        star: 0
+        isLock: 0
+        isEquipped: 0
+        Data: {fileID: 0}
+        EquipmentStats:
+          hp: 0
+          atk: 0
+          def: 0
+          speed: 0
+          critRate: 0
+          critDamage: 0
+          manaBonus: 0
+        equippedCharacterUID: 
+      ring:
+        uid: be31b199-80b9-42af-9e0a-405fba6a9e23
+        itemID: 0
+        level: 0
+        star: 0
+        isLock: 0
+        isEquipped: 0
+        Data: {fileID: 0}
+        EquipmentStats:
+          hp: 0
+          atk: 0
+          def: 0
+          speed: 0
+          critRate: 0
+          critDamage: 0
+          manaBonus: 0
+        equippedCharacterUID: 
+      necklace:
+        uid: e237277d-a5c8-4082-8000-6f9e9f9865fd
+        itemID: 0
+        level: 0
+        star: 0
+        isLock: 0
+        isEquipped: 0
+        Data: {fileID: 0}
+        EquipmentStats:
+          hp: 0
+          atk: 0
+          def: 0
+          speed: 0
+          critRate: 0
+          critDamage: 0
+          manaBonus: 0
+        equippedCharacterUID: 
+    currentStats:
+      baseStats: {fileID: 0}
+      equipmentStats:
+        hp: 0
+        atk: 0
+        def: 0
+        speed: 0
+        critRate: 0
+        critDamage: 0
+        manaBonus: 0
+      FinalStats:
+        hp: 0
+        atk: 0
+        def: 0
+        speed: 0
+        critRate: 0
+        critDamage: 0
+        manaBonus: 0
+      PowerStats: 0
     CurrentLevel: 1
+    CurrentExp: 0
+    star: 0
+    isLineup: 0
+  currentState: 0
 --- !u!114 &3782078845924183941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2141,8 +2279,7 @@ MonoBehaviour:
   SortKey: 2295550227
   ObjectInterest: 1
   Flags: 262145
-  NestedObjects:
-  - {fileID: 7625600262548344279}
+  NestedObjects: []
   NetworkedBehaviours:
   - {fileID: 6036339931317014925}
   ForceRemoteRenderTimeframe: 0
@@ -5218,16 +5355,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &7625600262548344279 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1604030218886885383, guid: 6de78cd913603ed4f9e75fb2efcdeb92, type: 3}
-  m_PrefabInstance: {fileID: 9192194238663589328}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

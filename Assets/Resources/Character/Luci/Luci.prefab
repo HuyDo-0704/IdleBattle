@@ -313,6 +313,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthFill: {fileID: 6245422813725251324}
   manaFill: {fileID: 7192954303160821994}
+  Level: {fileID: 2934474540454572911}
+  nameChar: {fileID: 9145748845494307997}
   HUDBar: {fileID: 3321224223668871661}
   friendlyColor: {r: 0, g: 1, b: 0, a: 1}
   enemyColor: {r: 1, g: 0, b: 0, a: 1}
@@ -1459,17 +1461,151 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Hud: {fileID: 7408917670954676960}
-  Stats:
-    baseStats: {fileID: 11400000, guid: a7ea3489acd02034a8e1045dcc20ea5d, type: 2}
-    CSpeed: 0
-    CAttack: 0
-    CDef: 0
-    MHealth: 0
-    ManaBonus: 0
-    CCriticalRate: 0
-    CCriticalDamage: 0
-    PowerStats: 0
+  CChartacter:
+    uid: 
+    equipments:
+      weapon:
+        uid: 1713f7ad-43f3-4046-99cb-5e052038d034
+        itemID: 0
+        level: 0
+        star: 0
+        isLock: 0
+        isEquipped: 0
+        Data: {fileID: 0}
+        EquipmentStats:
+          hp: 0
+          atk: 0
+          def: 0
+          speed: 0
+          critRate: 0
+          critDamage: 0
+          manaBonus: 0
+        equippedCharacterUID: 
+      helmet:
+        uid: c1dbd477-c297-40c2-826d-1e1e51bfa6ed
+        itemID: 0
+        level: 0
+        star: 0
+        isLock: 0
+        isEquipped: 0
+        Data: {fileID: 0}
+        EquipmentStats:
+          hp: 0
+          atk: 0
+          def: 0
+          speed: 0
+          critRate: 0
+          critDamage: 0
+          manaBonus: 0
+        equippedCharacterUID: 
+      armor:
+        uid: c492e839-5792-4566-a1bc-c90a0b8c97ba
+        itemID: 0
+        level: 0
+        star: 0
+        isLock: 0
+        isEquipped: 0
+        Data: {fileID: 0}
+        EquipmentStats:
+          hp: 0
+          atk: 0
+          def: 0
+          speed: 0
+          critRate: 0
+          critDamage: 0
+          manaBonus: 0
+        equippedCharacterUID: 
+      gloves:
+        uid: 4e884df5-07e5-4e99-8d79-1b8a37ee29ca
+        itemID: 0
+        level: 0
+        star: 0
+        isLock: 0
+        isEquipped: 0
+        Data: {fileID: 0}
+        EquipmentStats:
+          hp: 0
+          atk: 0
+          def: 0
+          speed: 0
+          critRate: 0
+          critDamage: 0
+          manaBonus: 0
+        equippedCharacterUID: 
+      shoes:
+        uid: 89a85ad3-b555-428a-9a3e-c24669b6d911
+        itemID: 0
+        level: 0
+        star: 0
+        isLock: 0
+        isEquipped: 0
+        Data: {fileID: 0}
+        EquipmentStats:
+          hp: 0
+          atk: 0
+          def: 0
+          speed: 0
+          critRate: 0
+          critDamage: 0
+          manaBonus: 0
+        equippedCharacterUID: 
+      ring:
+        uid: 969c6b3d-cdf8-4360-ab7e-537cd29f869e
+        itemID: 0
+        level: 0
+        star: 0
+        isLock: 0
+        isEquipped: 0
+        Data: {fileID: 0}
+        EquipmentStats:
+          hp: 0
+          atk: 0
+          def: 0
+          speed: 0
+          critRate: 0
+          critDamage: 0
+          manaBonus: 0
+        equippedCharacterUID: 
+      necklace:
+        uid: d4dc7986-72fb-4d5e-9e2c-22c37b35d408
+        itemID: 0
+        level: 0
+        star: 0
+        isLock: 0
+        isEquipped: 0
+        Data: {fileID: 0}
+        EquipmentStats:
+          hp: 0
+          atk: 0
+          def: 0
+          speed: 0
+          critRate: 0
+          critDamage: 0
+          manaBonus: 0
+        equippedCharacterUID: 
+    currentStats:
+      baseStats: {fileID: 0}
+      equipmentStats:
+        hp: 0
+        atk: 0
+        def: 0
+        speed: 0
+        critRate: 0
+        critDamage: 0
+        manaBonus: 0
+      FinalStats:
+        hp: 0
+        atk: 0
+        def: 0
+        speed: 0
+        critRate: 0
+        critDamage: 0
+        manaBonus: 0
+      PowerStats: 0
     CurrentLevel: 1
+    CurrentExp: 0
+    star: 0
+    isLineup: 0
   currentState: 0
 --- !u!1 &3282349675828596777
 GameObject:
@@ -5199,6 +5335,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8689748718007177647, guid: 6de78cd913603ed4f9e75fb2efcdeb92, type: 3}
   m_PrefabInstance: {fileID: 9024784869374772243}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2934474540454572911 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6162933140724627324, guid: 6de78cd913603ed4f9e75fb2efcdeb92, type: 3}
+  m_PrefabInstance: {fileID: 9024784869374772243}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3321224223668871661 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5992357957744190974, guid: 6de78cd913603ed4f9e75fb2efcdeb92, type: 3}
@@ -5224,5 +5371,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &9145748845494307997 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 275353014578432142, guid: 6de78cd913603ed4f9e75fb2efcdeb92, type: 3}
+  m_PrefabInstance: {fileID: 9024784869374772243}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

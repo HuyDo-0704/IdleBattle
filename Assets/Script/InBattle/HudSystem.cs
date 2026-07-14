@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using TMPro;
 public enum TypeTeam
 {
     None,
@@ -13,6 +14,8 @@ public class HudSystem : MonoBehaviour
     [Header("UI")]
     [SerializeField] private Image healthFill;
     [SerializeField] private Image manaFill;
+    [SerializeField] private TMP_Text Level;
+    [SerializeField] private TMP_Text nameChar;
     public GameObject HUDBar;
 
     [Header("Color")]
@@ -83,6 +86,8 @@ public class HudSystem : MonoBehaviour
             manaFill.fillAmount = currentMana / maxMana;
 
         UpdateColor();
+        nameChar.text = owner.CChartacter.currentStats.baseStats.characterName;
+        Level.text = owner.CChartacter.CurrentLevel.ToString();
     }
     public void SetTeam(TypeTeam team)
     {
