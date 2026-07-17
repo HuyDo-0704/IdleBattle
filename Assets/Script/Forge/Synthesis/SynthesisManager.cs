@@ -10,24 +10,64 @@ public class SynthesisManager : MonoBehaviour
     [SerializeField] SynthesisPanel synthesisPanel;
 
     public List<EquipmentItem> mergeItems = new();
-
+    public int RequiredItemCount => 9;
     private void Awake()
     {
         Instance = this;
     }
 
-    public void AddItem(EquipmentItem item)
+    public bool AddItem(EquipmentItem item)
     {
+        if (item == null)
+        {
+            Debug.Log("Item is null.");
+            return false;
+        }
+
         if (mergeItems.Count >= synthesisRule.requiredItemAmount)
-            return;
+        {
+            Debug.Log("Merge slots are full.");
+            return false;
+        }
+
+        // Nếu không phải item đầu tiên thì phải cùng rarity
+        if (mergeItems.Count > 0)
+        {
+            ItemRare firstRare = mergeItems[0].Data.defaultRare;
+
+            if (item.Data.defaultRare != firstRare)
+            {
+                Debug.Log("Not same rarity.");
+                return false;
+            }
+        }
 
         mergeItems.Add(item);
-        synthesisPanel.Refresh();
-    }
 
+        Debug.Log($"Add Item : {item.Data.itemName} | Rare : {item.Data.defaultRare} ({mergeItems.Count}/{synthesisRule.requiredItemAmount})");
+
+        synthesisPanel.Refresh();
+
+        return true;
+    }
+    public bool RemoveItem(EquipmentItem item)
+    {
+        if (item == null)
+            return false;
+
+        if (!mergeItems.Remove(item))
+            return false;
+
+        synthesisPanel.Refresh();
+
+        return true;
+    }
     public void Clear()
     {
         mergeItems.Clear();
+        synthesisPanel.Refresh();
+
+        Debug.Log("Merge slots cleared.");
     }
 
     public void Merge()
@@ -58,7 +98,7 @@ public class SynthesisManager : MonoBehaviour
                 ItemInventoryManager.Instance.RemoveItem(item.uid);
 
             mergeItems.Clear();
-
+            synthesisPanel.ResetUI();
             return;
         }
 
@@ -80,7 +120,8 @@ public class SynthesisManager : MonoBehaviour
         ItemInventoryManager.Instance.AddItem(randomEquipment);
 
         mergeItems.Clear();
-
+        // reset Inventory
+        synthesisPanel.ResetUI();
         Debug.Log($"Merge Success : {resultRare}");
     }
 
