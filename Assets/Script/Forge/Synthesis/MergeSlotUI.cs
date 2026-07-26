@@ -8,23 +8,39 @@ public class MergeSlotUI : MonoBehaviour
     Color defaultColor = Color.gray1 ;
 
     private EquipmentItem currentItem;
-
+    // cho item 
     public void SetItem(EquipmentItem item)
     {
         currentItem = item;
 
         if (item == null)
         {
-            icon.enabled = false;
-            icon.sprite = null;
+            Clear();
             return;
         }
 
-        icon.enabled = true;
-        icon.sprite = item.Data.icons;
-        BG.color = DataManager.Instance.DataGame.GetColorByRarity(item.Data.defaultRare);
+        SetVisual(item.Data.icons, item.Data.defaultRare);
     }
+    // cho itemdata
+    public void SetItem(EquipmentData data)
+    {
+        currentItem = null;
 
+        if (data == null)
+        {
+            Clear();
+            return;
+        }
+
+        SetVisual(data.icons, data.defaultRare);
+    }
+    // update hình ảnh 
+    private void SetVisual(Sprite sprite, ItemRare rare)
+    {
+        icon.enabled = true;
+        icon.sprite = sprite;
+        BG.color = DataManager.Instance.DataGame.GetColorByRarity(rare);
+    }
     public EquipmentItem GetItem()
     {
         return currentItem;
@@ -42,6 +58,6 @@ public class MergeSlotUI : MonoBehaviour
         if (currentItem == null)
             return;
 
-        SynthesisManager.Instance.RemoveItem(currentItem);
+        MergeManager.Instance.RemoveItem(currentItem);
     }
 }

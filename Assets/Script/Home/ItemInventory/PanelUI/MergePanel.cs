@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
 using TMPro;
-public class SynthesisPanel : MonoBehaviour
+public class MergePanel : MonoBehaviour
 {
     [Header("UI")]
     [SerializeField] private List<MergeSlotUI> mergeSlots;
@@ -11,11 +11,13 @@ public class SynthesisPanel : MonoBehaviour
     [SerializeField] private GameObject itemPrefab;
     [SerializeField] private Button mergeButton;
     [SerializeField] private TMP_Dropdown rarityDropdown;
-
     private EquipmentType? currentEquipmentFilter = null;
     private ItemRare? currentRareFilter = null;
+    [Header("Merge Result")]
+    [SerializeField] private MergeSlotUI mergeResulSlots;
     private void Start()
     {
+        mergeResulSlots.Clear();
         mergeButton.onClick.AddListener(OnClickMerge);
 
         rarityDropdown.onValueChanged.AddListener(OnRarityChanged);
@@ -36,11 +38,11 @@ public class SynthesisPanel : MonoBehaviour
     }
     private void OnDisable()
     {
-        SynthesisManager.Instance.Clear();
+        MergeManager.Instance.Clear();
     }
     public void Refresh()
     {
-        List<EquipmentItem> items = SynthesisManager.Instance.mergeItems;
+        List<EquipmentItem> items = MergeManager.Instance.mergeItems;
 
         for (int i = 0; i < mergeSlots.Count; i++)
         {
@@ -54,13 +56,13 @@ public class SynthesisPanel : MonoBehaviour
             }
         }
 
-        mergeButton.interactable = items.Count == SynthesisManager.Instance.RequiredItemCount;
+        mergeButton.interactable = items.Count == MergeManager.Instance.RequiredItemCount;
         RefreshInventorySelection();
     }
 
     private void OnClickMerge()
     {
-        SynthesisManager.Instance.Merge();
+        MergeManager.Instance.Merge();
 
         Refresh();
     }
@@ -134,5 +136,11 @@ public class SynthesisPanel : MonoBehaviour
 
         SpawnInventoryItem();
         Refresh();
+    }
+    public void ShowMergeResult(EquipmentData data)
+    {
+        if (data == null)
+            return;
+        mergeResulSlots.SetItem(data);
     }
 }

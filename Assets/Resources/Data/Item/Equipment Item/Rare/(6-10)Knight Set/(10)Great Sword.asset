@@ -27,5 +27,5 @@ MonoBehaviour:
   critDamage: 0
   healthPerLevel: 0
   manaPerLevel: 0
-  attackPerLevel: 5
+  attackPerLevel: 6
   defensePerLevel: 0

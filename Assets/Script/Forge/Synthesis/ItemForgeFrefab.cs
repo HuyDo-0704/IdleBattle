@@ -20,22 +20,22 @@ public class ItemForgeFrefab : MonoBehaviour
 
     public void ToggleClick()
     {
-        if (SynthesisManager.Instance.mergeItems.Contains(equipmentItem))
-            SynthesisManager.Instance.RemoveItem(equipmentItem);
+        if (MergeManager.Instance.mergeItems.Contains(equipmentItem))
+            MergeManager.Instance.RemoveItem(equipmentItem);
         else
-            SynthesisManager.Instance.AddItem(equipmentItem);
+            MergeManager.Instance.AddItem(equipmentItem);
     }
 
     private void UpdateSelectUI()
     {
         bool isSelected =
-            SynthesisManager.Instance.mergeItems.Contains(equipmentItem);
+            MergeManager.Instance.mergeItems.Contains(equipmentItem);
 
         selectImage.SetActive(isSelected);
     }
     public void RefreshUI()
     {
         selectImage.SetActive(
-            SynthesisManager.Instance.mergeItems.Contains(equipmentItem));
+            MergeManager.Instance.mergeItems.Contains(equipmentItem));
     }
 }

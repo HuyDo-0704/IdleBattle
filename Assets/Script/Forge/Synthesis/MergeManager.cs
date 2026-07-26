@@ -2,12 +2,12 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class SynthesisManager : MonoBehaviour
+public class MergeManager : MonoBehaviour
 {
-    public static SynthesisManager Instance;
+    public static MergeManager Instance;
 
-    [SerializeField] private SynthesisRule synthesisRule;
-    [SerializeField] SynthesisPanel synthesisPanel;
+    [SerializeField] private MergeRule synthesisRule;
+    [SerializeField] MergePanel synthesisPanel;
 
     public List<EquipmentItem> mergeItems = new();
     public int RequiredItemCount => 9;
@@ -122,12 +122,13 @@ public class SynthesisManager : MonoBehaviour
         mergeItems.Clear();
         // reset Inventory
         synthesisPanel.ResetUI();
+        synthesisPanel.ShowMergeResult(randomEquipment);
         Debug.Log($"Merge Success : {resultRare}");
     }
 
     private ItemRare RollRare(ItemRare currentRare)
     {
-        List<SynthesisChance> chances =
+        List<MergeChance> chances =
             synthesisRule.chances
             .Where(x => x.fromRare == currentRare)
             .OrderByDescending(x => (int)x.toRare)

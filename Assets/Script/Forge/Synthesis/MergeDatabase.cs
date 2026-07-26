@@ -4,9 +4,9 @@ using UnityEngine;
 
 [CreateAssetMenu(fileName ="Synthesis Database",
     menuName ="Game/Synthesis Database")]
-public class SynthesisDatabase : ScriptableObject
+public class MergeDatabase : ScriptableObject
 {
-    public SynthesisRule synthesisRule;
+    public MergeRule synthesisRule;
 
     public List<ItemData> availableItems = new();
 

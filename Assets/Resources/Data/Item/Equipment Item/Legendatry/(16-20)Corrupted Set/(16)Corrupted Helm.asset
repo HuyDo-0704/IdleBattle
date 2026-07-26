@@ -10,22 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 314753c2affce9c4483181b879540971, type: 3}
-  m_Name: (15)Slayer Blade
+  m_Name: (16)Corrupted Helm
   m_EditorClassIdentifier: Assembly-CSharp::EquipmentData
-  itemID: 15
-  itemName: Slayer Blade
+  itemID: 16
+  itemName: Corrupted Helm
   description: 
   itemType: 0
-  defaultRare: 3
-  icons: {fileID: 21300000, guid: 864028af654356741b58a23eb335354d, type: 3}
-  equipmentType: 0
-  hp: 0
-  atk: 45
-  def: 0
+  defaultRare: 4
+  icons: {fileID: 8815945819817097633, guid: e05451618a5551d47a48651bc43504d9, type: 3}
+  equipmentType: 1
+  hp: 130
+  atk: 0
+  def: 24
   speed: 0
-  critRate: 0
-  critDamage: 5
-  healthPerLevel: 0
+  critRate: 2
+  critDamage: 0
+  healthPerLevel: 15
   manaPerLevel: 0
-  attackPerLevel: 10
-  defensePerLevel: 0
+  attackPerLevel: 0
+  defensePerLevel: 5

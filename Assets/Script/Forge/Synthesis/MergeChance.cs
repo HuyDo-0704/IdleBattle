@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 
 [Serializable]
-public class SynthesisChance
+public class MergeChance
 {
     [Header("Current Rare")]
     public ItemRare fromRare;
