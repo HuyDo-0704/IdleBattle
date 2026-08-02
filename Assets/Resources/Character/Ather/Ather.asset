@@ -26,7 +26,8 @@ MonoBehaviour:
   Speed: 3.5
   CriticalRate: 0
   CriticalDamage: 0
-  attackType: 0
+  normalAttack: {fileID: 11400000, guid: d67110301e490374c94b2abfea175899, type: 2}
+  ultimate: {fileID: 0}
   attackSpeed: 1
   healthPerLevel: 10
   manaPerLevel: 5

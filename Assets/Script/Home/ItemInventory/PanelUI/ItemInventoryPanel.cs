@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class ItemInventoryPanel : MonoBehaviour
@@ -6,8 +7,7 @@ public class ItemInventoryPanel : MonoBehaviour
     [SerializeField] private Transform content;
     [SerializeField] private ItemInventoryPrefab prefab;
 
-    private readonly List<ItemInventoryPrefab> items =
-        new();
+    private readonly List<ItemInventoryPrefab> items = new();
 
     private void OnEnable()
     {
@@ -21,12 +21,13 @@ public class ItemInventoryPanel : MonoBehaviour
 
         items.Clear();
 
-        foreach (Item item in ItemInventoryManager.Instance.ownedItems)
+        // Spawn từ rare cao -> thấp
+        var sortedItems = ItemInventoryManager.Instance.ownedItems.OrderByDescending(item =>DataManager.Instance.DataGame.itemDatabase.GetItem(item.itemID).defaultRare);
+
+        foreach (Item item in sortedItems)
         {
             ItemInventoryPrefab ui = Instantiate(prefab, content);
-
             ui.Setup(item);
-
             items.Add(ui);
         }
     }

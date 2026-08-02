@@ -5,93 +5,77 @@ public class BattleActionSystem : MonoBehaviour
 {
     public static BattleActionSystem Instance;
 
+    [SerializeField] private float moveTime = 0.2f;
+    [SerializeField] private float attackDistance = 2f;
+    [SerializeField] private float attackDelay = 0.25f;
+
     private void Awake()
     {
         Instance = this;
     }
 
-    public IEnumerator DoMeleeAttack(CharacterManager attacker, CharacterManager target)
+    public IEnumerator DoMeleeAttack(
+        CharacterManager attacker,
+        CharacterManager target,
+        MeleeSkillData skill)
     {
-        Debug.Log($"{attacker.name} Melee Attack {target.name}");
+        Transform tf = attacker.transform;
 
-        Transform attackerTransform = attacker.transform; 
-        Transform targetTransform = target.transform; 
+        Vector3 start = tf.position;
 
-        Vector3 startPos = attackerTransform.position;
+        Vector3 attackPos =
+            target.transform.position -
+            (target.transform.position - start).normalized * attackDistance;
 
-        float attackDistance = 2f; // khoản cách với kẻ dịch khi tới 
+        yield return Move(tf, start, attackPos);
 
-        Vector3 attackPos = targetTransform.position -
-                            (targetTransform.position - startPos).normalized * attackDistance;
+        PlayAttackAnimation(attacker);
 
-        float moveTime = 0.2f;
-        float elapsed = 0f;
+        yield return new WaitForSeconds(attackDelay);
 
-        // Lướt tới
-        while (elapsed < moveTime)
-        {
-            elapsed += Time.deltaTime;
-            attackerTransform.position = Vector3.Lerp(
-                startPos,
-                attackPos,
-                elapsed / moveTime);
+        CombatVFXManager.Instance.SpawnHit(skill.hitVFX,target.transform);
 
-            yield return null;
-        }
+        target.ReceiveDamage(
+            DamageCalculator.CalculateDamage(attacker, target));
 
-        attackerTransform.position = attackPos;
-
-        // Play animation
-        Animator animator = attacker.Hud.GetComponent<Animator>();
-        if (animator != null)
-        {
-            animator.SetTrigger("Attack");
-        }
-
-        // Chờ animation đánh
-        yield return new WaitForSeconds(0.25f);
-
-        int damage = DamageCalculator.CalculateDamage(attacker, target);
-
-        target.ReceiveDamage(damage);
-
-        Debug.Log($"{target.name} Receive {damage}");
-
-        // Lùi về
-        elapsed = 0f;
-
-        while (elapsed < moveTime)
-        {
-            elapsed += Time.deltaTime;
-            attackerTransform.position = Vector3.Lerp(
-                attackPos,
-                startPos,
-                elapsed / moveTime);
-
-            yield return null;
-        }
-
-        attackerTransform.position = startPos;
+        yield return Move(tf, attackPos, start);
     }
 
-    public IEnumerator DoRangedAttack(CharacterManager attacker, CharacterManager target)
+    public IEnumerator DoRangedAttack(
+        CharacterManager attacker,
+        CharacterManager target,
+        RangedSkillData skill)
     {
-        Debug.Log($"{attacker.name} Ranged Attack {target.name}");
+        PlayAttackAnimation(attacker);
 
-        Animator animator = attacker.Hud.GetComponent<Animator>();
+        yield return new WaitForSeconds(attackDelay);
 
-        if (animator != null)
+        CombatVFXManager.Instance.SpawnProjectile(attacker,target,skill);
+
+        yield return new WaitForSeconds(0.8f);
+    }
+
+    private IEnumerator Move(Transform tf, Vector3 from, Vector3 to)
+    {
+        float t = 0f;
+
+        while (t < moveTime)
         {
-            animator.SetTrigger("Attack");
+            t += Time.deltaTime;
+
+            tf.position = Vector3.Lerp(from, to, t / moveTime);
+
+            yield return null;
         }
 
-        // Chờ animation bắn
-        yield return new WaitForSeconds(0.3f);
+        tf.position = to;
+    }
 
-        int damage = DamageCalculator.CalculateDamage(attacker, target);
+    private void PlayAttackAnimation(CharacterManager character)
+    {
+        Animator anim = character.Hud.GetComponent<Animator>();
 
-        target.ReceiveDamage(damage);
-
-        Debug.Log($"{target.name} Receive {damage}");
+        if (anim != null)
+            anim.SetTrigger("Attack");
     }
 }

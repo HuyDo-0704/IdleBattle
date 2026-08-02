@@ -25,7 +25,9 @@ public class CharacterBaseStats : ScriptableObject
     public float CriticalDamage = 0f;
 
     [Header("Attack Settings")]
-    public AttackType attackType = AttackType.Melee;
+    
+    public SkillData normalAttack;
+    public SkillData ultimate;
     public float attackSpeed = 1f; // attacks per second
 
     [Header("Level Scaling")]

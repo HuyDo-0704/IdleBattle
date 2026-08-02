@@ -48,31 +48,28 @@ public class CharacterExpUI : MonoBehaviour
 
             int expToLevelUp = needExp - character.CurrentExp;
 
-            // Không đủ để lên level
-            if (remainExp < expToLevelUp)
+            if (remainExp <= expToLevelUp)
             {
-                yield return StartCoroutine(
-                    AnimateExp(
-                        character.CurrentExp,
-                        character.CurrentExp + remainExp,
-                        needExp));
+                yield return AnimateExp(
+                    character.CurrentExp,
+                    character.CurrentExp + remainExp,
+                    needExp);
 
+                character.CurrentExp += remainExp;
 
                 remainExp = 0;
             }
-            // Đủ lên level
             else
             {
-                yield return StartCoroutine(
-                    AnimateExp(
-                        character.CurrentExp,
-                        needExp,
-                        needExp));
+                yield return AnimateExp(
+                    character.CurrentExp,
+                    needExp,
+                    needExp);
+
+                remainExp -= expToLevelUp;
 
                 character.CurrentLevel++;
                 character.CurrentExp = 0;
-
-                remainExp -= expToLevelUp;
 
                 UpdateUI();
 

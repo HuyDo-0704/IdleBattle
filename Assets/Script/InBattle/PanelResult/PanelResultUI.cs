@@ -48,7 +48,7 @@ public class PanelResultUI : MonoBehaviour
             Destroy(child.gameObject);
 
         // Spawn UI cho từng nhân vật
-        foreach (Character character in CharacterInventoryManager.Instance.ownedCharacters)
+        foreach (Character character in CharacterInventoryManager.Instance.ownedCharacters.FindAll(x => x.isLineup))
         {
             GameObject obj = Instantiate(CharPrefabs, container.transform);
 

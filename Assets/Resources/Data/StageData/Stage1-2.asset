@@ -17,95 +17,447 @@ MonoBehaviour:
   enemies:
   - position: 0
     character:
+      uid: 
+      equipments:
+        weapon:
+          uid: f716d794-576d-4d3b-9538-eb077c2aa179
+          itemID: 0
+          level: 0
+          star: 0
+          isLock: 0
+          isEquipped: 0
+          Data: {fileID: 0}
+          EquipmentStats:
+            hp: 0
+            atk: 0
+            def: 0
+            speed: 0
+            critRate: 0
+            critDamage: 0
+            manaBonus: 0
+          equippedCharacterUID: 
+        helmet:
+          uid: 96842f96-3d68-49d7-ac80-1623e1dcec3c
+          itemID: 0
+          level: 0
+          star: 0
+          isLock: 0
+          isEquipped: 0
+          Data: {fileID: 0}
+          EquipmentStats:
+            hp: 0
+            atk: 0
+            def: 0
+            speed: 0
+            critRate: 0
+            critDamage: 0
+            manaBonus: 0
+          equippedCharacterUID: 
+        armor:
+          uid: 54167cc0-1c22-478f-95ce-edac866c0809
+          itemID: 0
+          level: 0
+          star: 0
+          isLock: 0
+          isEquipped: 0
+          Data: {fileID: 0}
+          EquipmentStats:
+            hp: 0
+            atk: 0
+            def: 0
+            speed: 0
+            critRate: 0
+            critDamage: 0
+            manaBonus: 0
+          equippedCharacterUID: 
+        gloves:
+          uid: 435fe039-e03c-45f8-a023-6dda1af96ae4
+          itemID: 0
+          level: 0
+          star: 0
+          isLock: 0
+          isEquipped: 0
+          Data: {fileID: 0}
+          EquipmentStats:
+            hp: 0
+            atk: 0
+            def: 0
+            speed: 0
+            critRate: 0
+            critDamage: 0
+            manaBonus: 0
+          equippedCharacterUID: 
+        shoes:
+          uid: 44719efe-ee17-40de-8084-a03980e829d6
+          itemID: 0
+          level: 0
+          star: 0
+          isLock: 0
+          isEquipped: 0
+          Data: {fileID: 0}
+          EquipmentStats:
+            hp: 0
+            atk: 0
+            def: 0
+            speed: 0
+            critRate: 0
+            critDamage: 0
+            manaBonus: 0
+          equippedCharacterUID: 
+        ring:
+          uid: 3218ca47-14b7-4acc-9428-14526ea9e78c
+          itemID: 0
+          level: 0
+          star: 0
+          isLock: 0
+          isEquipped: 0
+          Data: {fileID: 0}
+          EquipmentStats:
+            hp: 0
+            atk: 0
+            def: 0
+            speed: 0
+            critRate: 0
+            critDamage: 0
+            manaBonus: 0
+          equippedCharacterUID: 
+        necklace:
+          uid: c0cf5449-7565-4d82-b337-18dd04dbe4ab
+          itemID: 0
+          level: 0
+          star: 0
+          isLock: 0
+          isEquipped: 0
+          Data: {fileID: 0}
+          EquipmentStats:
+            hp: 0
+            atk: 0
+            def: 0
+            speed: 0
+            critRate: 0
+            critDamage: 0
+            manaBonus: 0
+          equippedCharacterUID: 
       currentStats:
-        baseStats: {fileID: 0}
-        CSpeed: 0
-        CAttack: 0
-        CDef: 0
-        MHealth: 0
-        ManaBonus: 0
-        CCriticalRate: 0
-        CCriticalDamage: 0
-        PowerStats: 0
-        CurrentLevel: 1
-      star: 0
+        baseStats: {fileID: 11400000, guid: 9f19a3d99ad6d1c42a23b00b4f93446d, type: 2}
+        equipmentStats:
+          hp: 0
+          atk: 0
+          def: 0
+          speed: 0
+          critRate: 0
+          critDamage: 0
+          manaBonus: 0
+        FinalStats:
+          hp: 40
+          atk: 10
+          def: 5
+          speed: 3.5
+          critRate: 0
+          critDamage: 0
+          manaBonus: 0
+        PowerStats: 28
+      CurrentLevel: 1
+      CurrentExp: 0
+      star: 1
       isLineup: 0
-  - position: 0
+  - position: 1
     character:
+      uid: 
+      equipments:
+        weapon:
+          uid: f716d794-576d-4d3b-9538-eb077c2aa179
+          itemID: 0
+          level: 0
+          star: 0
+          isLock: 0
+          isEquipped: 0
+          Data: {fileID: 0}
+          EquipmentStats:
+            hp: 0
+            atk: 0
+            def: 0
+            speed: 0
+            critRate: 0
+            critDamage: 0
+            manaBonus: 0
+          equippedCharacterUID: 
+        helmet:
+          uid: 96842f96-3d68-49d7-ac80-1623e1dcec3c
+          itemID: 0
+          level: 0
+          star: 0
+          isLock: 0
+          isEquipped: 0
+          Data: {fileID: 0}
+          EquipmentStats:
+            hp: 0
+            atk: 0
+            def: 0
+            speed: 0
+            critRate: 0
+            critDamage: 0
+            manaBonus: 0
+          equippedCharacterUID: 
+        armor:
+          uid: 54167cc0-1c22-478f-95ce-edac866c0809
+          itemID: 0
+          level: 0
+          star: 0
+          isLock: 0
+          isEquipped: 0
+          Data: {fileID: 0}
+          EquipmentStats:
+            hp: 0
+            atk: 0
+            def: 0
+            speed: 0
+            critRate: 0
+            critDamage: 0
+            manaBonus: 0
+          equippedCharacterUID: 
+        gloves:
+          uid: 435fe039-e03c-45f8-a023-6dda1af96ae4
+          itemID: 0
+          level: 0
+          star: 0
+          isLock: 0
+          isEquipped: 0
+          Data: {fileID: 0}
+          EquipmentStats:
+            hp: 0
+            atk: 0
+            def: 0
+            speed: 0
+            critRate: 0
+            critDamage: 0
+            manaBonus: 0
+          equippedCharacterUID: 
+        shoes:
+          uid: 44719efe-ee17-40de-8084-a03980e829d6
+          itemID: 0
+          level: 0
+          star: 0
+          isLock: 0
+          isEquipped: 0
+          Data: {fileID: 0}
+          EquipmentStats:
+            hp: 0
+            atk: 0
+            def: 0
+            speed: 0
+            critRate: 0
+            critDamage: 0
+            manaBonus: 0
+          equippedCharacterUID: 
+        ring:
+          uid: 3218ca47-14b7-4acc-9428-14526ea9e78c
+          itemID: 0
+          level: 0
+          star: 0
+          isLock: 0
+          isEquipped: 0
+          Data: {fileID: 0}
+          EquipmentStats:
+            hp: 0
+            atk: 0
+            def: 0
+            speed: 0
+            critRate: 0
+            critDamage: 0
+            manaBonus: 0
+          equippedCharacterUID: 
+        necklace:
+          uid: c0cf5449-7565-4d82-b337-18dd04dbe4ab
+          itemID: 0
+          level: 0
+          star: 0
+          isLock: 0
+          isEquipped: 0
+          Data: {fileID: 0}
+          EquipmentStats:
+            hp: 0
+            atk: 0
+            def: 0
+            speed: 0
+            critRate: 0
+            critDamage: 0
+            manaBonus: 0
+          equippedCharacterUID: 
       currentStats:
-        baseStats: {fileID: 0}
-        CSpeed: 0
-        CAttack: 0
-        CDef: 0
-        MHealth: 0
-        ManaBonus: 0
-        CCriticalRate: 0
-        CCriticalDamage: 0
-        PowerStats: 0
-        CurrentLevel: 1
-      star: 0
+        baseStats: {fileID: 11400000, guid: 74ea457f94ebad0438a2eacec2d18a05, type: 2}
+        equipmentStats:
+          hp: 0
+          atk: 0
+          def: 0
+          speed: 0
+          critRate: 0
+          critDamage: 0
+          manaBonus: 0
+        FinalStats:
+          hp: 70
+          atk: 10
+          def: 5
+          speed: 3
+          critRate: 0
+          critDamage: 0
+          manaBonus: 0
+        PowerStats: 30
+      CurrentLevel: 1
+      CurrentExp: 0
+      star: 1
       isLineup: 0
-  - position: 0
+  - position: 4
     character:
+      uid: 
+      equipments:
+        weapon:
+          uid: f716d794-576d-4d3b-9538-eb077c2aa179
+          itemID: 0
+          level: 0
+          star: 0
+          isLock: 0
+          isEquipped: 0
+          Data: {fileID: 0}
+          EquipmentStats:
+            hp: 0
+            atk: 0
+            def: 0
+            speed: 0
+            critRate: 0
+            critDamage: 0
+            manaBonus: 0
+          equippedCharacterUID: 
+        helmet:
+          uid: 96842f96-3d68-49d7-ac80-1623e1dcec3c
+          itemID: 0
+          level: 0
+          star: 0
+          isLock: 0
+          isEquipped: 0
+          Data: {fileID: 0}
+          EquipmentStats:
+            hp: 0
+            atk: 0
+            def: 0
+            speed: 0
+            critRate: 0
+            critDamage: 0
+            manaBonus: 0
+          equippedCharacterUID: 
+        armor:
+          uid: 54167cc0-1c22-478f-95ce-edac866c0809
+          itemID: 0
+          level: 0
+          star: 0
+          isLock: 0
+          isEquipped: 0
+          Data: {fileID: 0}
+          EquipmentStats:
+            hp: 0
+            atk: 0
+            def: 0
+            speed: 0
+            critRate: 0
+            critDamage: 0
+            manaBonus: 0
+          equippedCharacterUID: 
+        gloves:
+          uid: 435fe039-e03c-45f8-a023-6dda1af96ae4
+          itemID: 0
+          level: 0
+          star: 0
+          isLock: 0
+          isEquipped: 0
+          Data: {fileID: 0}
+          EquipmentStats:
+            hp: 0
+            atk: 0
+            def: 0
+            speed: 0
+            critRate: 0
+            critDamage: 0
+            manaBonus: 0
+          equippedCharacterUID: 
+        shoes:
+          uid: 44719efe-ee17-40de-8084-a03980e829d6
+          itemID: 0
+          level: 0
+          star: 0
+          isLock: 0
+          isEquipped: 0
+          Data: {fileID: 0}
+          EquipmentStats:
+            hp: 0
+            atk: 0
+            def: 0
+            speed: 0
+            critRate: 0
+            critDamage: 0
+            manaBonus: 0
+          equippedCharacterUID: 
+        ring:
+          uid: 3218ca47-14b7-4acc-9428-14526ea9e78c
+          itemID: 0
+          level: 0
+          star: 0
+          isLock: 0
+          isEquipped: 0
+          Data: {fileID: 0}
+          EquipmentStats:
+            hp: 0
+            atk: 0
+            def: 0
+            speed: 0
+            critRate: 0
+            critDamage: 0
+            manaBonus: 0
+          equippedCharacterUID: 
+        necklace:
+          uid: c0cf5449-7565-4d82-b337-18dd04dbe4ab
+          itemID: 0
+          level: 0
+          star: 0
+          isLock: 0
+          isEquipped: 0
+          Data: {fileID: 0}
+          EquipmentStats:
+            hp: 0
+            atk: 0
+            def: 0
+            speed: 0
+            critRate: 0
+            critDamage: 0
+            manaBonus: 0
+          equippedCharacterUID: 
       currentStats:
-        baseStats: {fileID: 0}
-        CSpeed: 0
-        CAttack: 0
-        CDef: 0
-        MHealth: 0
-        ManaBonus: 0
-        CCriticalRate: 0
-        CCriticalDamage: 0
-        PowerStats: 0
-        CurrentLevel: 1
-      star: 0
+        baseStats: {fileID: 11400000, guid: b2da6f84ff0a59c4a8e4d71683db2221, type: 2}
+        equipmentStats:
+          hp: 0
+          atk: 0
+          def: 0
+          speed: 0
+          critRate: 0
+          critDamage: 0
+          manaBonus: 0
+        FinalStats:
+          hp: 40
+          atk: 15
+          def: 5
+          speed: 3.5
+          critRate: 0
+          critDamage: 0
+          manaBonus: 0
+        PowerStats: 34
+      CurrentLevel: 1
+      CurrentExp: 0
+      star: 1
       isLineup: 0
-  - position: 0
-    character:
-      currentStats:
-        baseStats: {fileID: 0}
-        CSpeed: 0
-        CAttack: 0
-        CDef: 0
-        MHealth: 0
-        ManaBonus: 0
-        CCriticalRate: 0
-        CCriticalDamage: 0
-        PowerStats: 0
-        CurrentLevel: 1
-      star: 0
-      isLineup: 0
-  - position: 0
-    character:
-      currentStats:
-        baseStats: {fileID: 0}
-        CSpeed: 0
-        CAttack: 0
-        CDef: 0
-        MHealth: 0
-        ManaBonus: 0
-        CCriticalRate: 0
-        CCriticalDamage: 0
-        PowerStats: 0
-        CurrentLevel: 1
-      star: 0
-      isLineup: 0
-  - position: 0
-    character:
-      currentStats:
-        baseStats: {fileID: 0}
-        CSpeed: 0
-        CAttack: 0
-        CDef: 0
-        MHealth: 0
-        ManaBonus: 0
-        CCriticalRate: 0
-        CCriticalDamage: 0
-        PowerStats: 0
-        CurrentLevel: 1
-      star: 0
-      isLineup: 0
-  items: []
-  requireAliveCharacter: 3
+  expReward: 25
+  GoldReward: 40
+  items:
+  - itemData: {fileID: 11400000, guid: 98ca0d4cbf61d3444a4fd626feb56f09, type: 2}
+    itemRare: 1
+  requireAliveCharacter: 1
   requireRemainHPPercent: 70
   requireMaxRound: 10

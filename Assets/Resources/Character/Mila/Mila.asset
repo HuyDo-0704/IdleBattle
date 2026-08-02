@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9aa2544a0d9ae1b429fc2d4bd237b055, type: 3}
+  m_Name: Mila
+  m_EditorClassIdentifier: 
+  realm: 0
+  characterID: char_003
+  characterName: Luci
+  characterIcon: {fileID: 21300000, guid: aa5046804dcc30c4db8170082a09c53b, type: 3}
+  characterPrefab: {fileID: 3160093378589229040, guid: fac0b5d6f66ea6544a7476b6f96f6608, type: 3}
+  rare:
+    rarity: 4
+  DeHealth: 40
+  DeAttack: 15
+  DeDefense: 5
+  ManaBonus: 0
+  Speed: 3.5
+  CriticalRate: 0
+  CriticalDamage: 0
+  normalAttack: {fileID: 11400000, guid: 0c88899ccb87c864b93865fae7950930, type: 2}
+  ultimate: {fileID: 0}
+  attackSpeed: 1
+  healthPerLevel: 10
+  manaPerLevel: 5
+  attackPerLevel: 2
+  defensePerLevel: 1

@@ -8,7 +8,7 @@ public class TurnManager : MonoBehaviour
 
     [Header("Round")]
     [SerializeField] private int maxRound = 20;
-
+    [SerializeField] RoundUI roundUI;
     public int CurrentRound { get; private set; }
 
     public void SetUp()
@@ -18,7 +18,7 @@ public class TurnManager : MonoBehaviour
         turnQueue.Clear();
 
         CurrentRound = 1;
-
+        roundUI.Init(CurrentRound,maxRound); // UI
         BuildRoundQueue();
 
         Debug.Log($"===== ROUND {CurrentRound} =====");
@@ -77,12 +77,10 @@ public class TurnManager : MonoBehaviour
                 if (BattleManager.Instance.CheckBattleEnd())
                     yield break;
 
-                yield return new WaitForSeconds(1f);
             }
 
             CurrentRound++;
-
-            Debug.Log($"===== ROUND {CurrentRound} =====");
+            roundUI.UpdateRound(CurrentRound); // UI
 
             BuildRoundQueue();
         }

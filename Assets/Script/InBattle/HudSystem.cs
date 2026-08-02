@@ -19,8 +19,8 @@ public class HudSystem : MonoBehaviour
     public GameObject HUDBar;
 
     [Header("Color")]
-    [SerializeField] private Color friendlyColor = Color.green;
-    [SerializeField] private Color enemyColor = Color.red;
+    private Color friendlyColor = Color.green;
+    private Color enemyColor = Color.red;
 
     [HideInInspector]
     public CharacterManager owner;

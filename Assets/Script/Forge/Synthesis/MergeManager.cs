@@ -99,6 +99,7 @@ public class MergeManager : MonoBehaviour
 
             mergeItems.Clear();
             synthesisPanel.ResetUI();
+            synthesisPanel.ShowMergeResult(null, false);
             return;
         }
 
@@ -122,7 +123,7 @@ public class MergeManager : MonoBehaviour
         mergeItems.Clear();
         // reset Inventory
         synthesisPanel.ResetUI();
-        synthesisPanel.ShowMergeResult(randomEquipment);
+        synthesisPanel.ShowMergeResult(randomEquipment, true);
         Debug.Log($"Merge Success : {resultRare}");
     }
 

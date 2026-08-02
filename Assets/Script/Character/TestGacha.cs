@@ -1,14 +1,22 @@
 using UnityEngine;
 
-public class TestGacha : MonoBehaviour
+public class TestHero : MonoBehaviour
 {
-    public CharacterBaseStats characterBaseStats;
+    [SerializeField] private int level = 5;
+
     public void SummonCharacter()
     {
+        foreach (CharacterBaseStats baseStats in DataManager.Instance.DataGame.characterBaseStats)
+        {
+            if (baseStats == null)
+                continue;
 
-        Character character =
-            GameManager.Instance.CreateCharacter(characterBaseStats.characterID, 50);
+            Character character =
+                GameManager.Instance.CreateCharacter(baseStats.characterID, level);
 
-        CharacterInventoryManager.Instance.AddCharacter(character);
+            CharacterInventoryManager.Instance.AddCharacter(character);
+        }
+
+        Debug.Log("Summon All Characters Complete!");
     }
 }

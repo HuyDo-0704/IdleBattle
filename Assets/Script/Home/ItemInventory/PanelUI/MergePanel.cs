@@ -14,6 +14,8 @@ public class MergePanel : MonoBehaviour
     private EquipmentType? currentEquipmentFilter = null;
     private ItemRare? currentRareFilter = null;
     [Header("Merge Result")]
+    [SerializeField] private GameObject VFXSuccess;
+    [SerializeField] private GameObject VFXFailed;
     [SerializeField] private MergeSlotUI mergeResulSlots;
     private void Start()
     {
@@ -137,10 +139,19 @@ public class MergePanel : MonoBehaviour
         SpawnInventoryItem();
         Refresh();
     }
-    public void ShowMergeResult(EquipmentData data)
+    public void ShowMergeResult(EquipmentData data, bool isSuccess)
     {
-        if (data == null)
-            return;
-        mergeResulSlots.SetItem(data);
+        if (isSuccess)
+        {
+            mergeResulSlots.SetItem(data);
+
+            VFXSuccess.SetActive(true);
+        }
+        else
+        {
+            mergeResulSlots.Clear();
+
+            VFXFailed.SetActive(true);
+        }
     }
 }
